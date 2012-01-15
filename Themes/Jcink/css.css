@@ -1,0 +1,302 @@
+/*
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    Revised BSD License for more details.
+
+    Copyright 2004-2008 Jcink - https://launchpad.net/tfbb
+    Copyright 2004-2008 Jcink - http://jcink.com/
+    $ThemeInfo - Name: TFBB Theme - Author: jcink $
+    $FileInfo: settings.php - Last Update: 12/07/2010 SVN 600 - Author: jcink $
+*/
+
+html {
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 11px;
+color: white;
+}
+
+body {
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 11px;
+margin: 1px 10px 0px 10px;
+color: white;
+background-image: url(bg.gif);
+background-color: black;
+}
+
+a:link, a:visited, a:active {
+color: silver;
+text-decoration: none;
+}
+
+a:hover {
+color: gray;
+text-decoration: none;
+}
+
+.copyright {
+text-align: center;
+color: #FFF;
+font-family: Verdana, Tahoma, Arial, Sans-Serif;
+font-size: 9px;
+line-height: 12px;
+}
+
+.copyright a:link, .copyright a:visited, .copyright a:active {
+color: #dfdfdf;
+text-decoration: none;
+}
+
+.copyright a:hover {
+color: #fdfdfd;
+text-decoration: none;
+}
+
+.NavLinks {
+font-weight: bold;
+padding: 6px 0px 6px 0px;
+}
+
+.forumname {
+font-weight: bold;
+}
+
+.noborder {
+border: 0;
+}
+
+img {
+border: 0;
+vertical-align: middle;
+display: inline;
+}
+
+.NavBar {
+width: 100%;
+font-size: 10px;
+margin: 3px 0px 3px 0px;
+font-weight: bold;
+color: white;
+background-color: #000059;
+border:1px solid #000080;
+}
+
+.NavBarRow1 {
+font-size: 11px;
+text-align: center;
+margin: 0;
+}
+
+.Table1, .CalTable1, .TableInfo1, .TableInfoMini1, .TableStats1, 
+.TableSMenu, .TableMenu {
+width: 100%;
+border: 0px;
+border-width: 1px;
+border-spacing: 1px;
+}
+
+.Table1Border, .CalTable1Border, .TableInfo1Border, .TableInfoMini1Border, 
+.StatsBorder, .TableSMenuBorder, .TableMenuBorder {
+padding: 0px;
+margin: 0px;
+width: 100%;
+background-color: #0C0040;
+border: 1px solid blue;
+}
+
+.Table2 {
+font-size: 11px;
+font-family: verdana, arial, sans-serif;
+color: white;
+width: 100%;
+}
+
+.Table3 {
+font-size: 11px;
+font-family: verdana, arial, sans-serif;
+color: white;
+width: 100%;
+}
+
+.TableRow1, .TableInfoRow1, .CalTableRow1, .CalTableInfoRow1, 
+.TableInfoMiniRow1, .TableStatsRow1, .TableSMenuRow1, .TableMenuRow1 {
+background-image: url(grad.gif);
+vertical-align: middle;
+font-weight: bold;
+letter-spacing: 1px;
+padding: 8px 0px 8px 5px;
+color: white;
+background-color: #000059;
+}
+
+.TableColumn2, .CalTableColumn2, .TableStatsColumn2, .TableSMenuColumn2, 
+.TableMenuColumn2 {
+font-weight: bold;
+padding: 7px;
+margin: 0px;
+color: white;
+background-color: #000080;
+}
+
+.TableInfoColumn2, .TableInfoMiniColumn2 {
+background-color: #000080;
+}
+
+.TableRow3, .TableInfoRow3, .TableInfoMiniRow3, 
+.TableStatsRow3, .TableSMenuRow3, .TableMenuRow3 {
+background-color: #000074;
+}
+
+.replypost { 
+font-size: 12px; 
+}
+
+.EditReply {
+color: #000000;
+font-size: 9px;
+}
+
+.signature {  
+font-size: 12px;
+color: white;
+}
+
+.CalDate, .CalDateCurrent { 
+text-align: right;
+font-weight: bold;
+font-size: 11px;
+padding: 4px;
+margin: 0px;
+color: white;
+background-color: #000059;
+}
+
+.CalTableColumn3 {
+height: 100px;
+background-color: #000069;
+}
+
+.CalTableColumn3Current {
+height: 100px;
+background-color: #000069;
+border: 2px;
+border-style: outset;
+}
+
+.CalTableColumn3Blank {
+height: 100px;
+color: white;
+background-color: #000069;
+}
+
+.TableRow4, .CalTableRow4, .TableStatsRow4, .TableSMenuRow4, 
+.TableMenuRow4, .TableInfoRow4, .TableInfoMiniRow4 {
+color: white;
+background-color: #00086B;
+}
+
+.TableStatsRow4, .TableStatsColumn4, .CalTableRow4, 
+.CalTableColumn4 {
+display: none;
+}
+
+/*.CalTableRow1, .CalTableRow2 {
+background-color: #343434;
+border: 1px solid #464646;
+}*/
+
+.TextBox {
+background-color: #000044;
+font-size: 13px;
+font-family: Courier, Courier New, Verdana, Arial;
+color: white;
+border: 1px solid blue;
+border-collapse: collapse;
+}
+
+.HiddenTextBox {
+display: none;
+}
+
+.QuoteTop {
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 10px;
+color: #a0a0a0;
+}
+
+.QuoteBottom {
+font-family: Courier, Courier New, Verdana, Arial, serif;
+font-size: 12px;
+color: #c0c0c0;
+background-color: black;
+border: 1px solid #000;
+border-color: gray;
+padding-top: 2px;
+padding-right: 2px;
+padding-bottom: 2px;
+padding-left: 2px;
+}
+
+.CodeTop {
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 10px;
+color: #a0a0a0;
+}
+
+.CodeBottom {
+font-family: Courier, Courier New, Verdana, Arial;
+font-size: 12px;
+color: #c0c0c0;
+background-color: black;
+border: 1px solid #000;
+border-color: gray;
+padding-top: 2px;
+padding-right: 2px;
+padding-bottom: 2px;
+padding-left: 2px;
+}
+
+.CodeBox {
+width: 500px;
+height: 100px;
+white-space: pre;
+overflow: auto;
+border: 3px outset black;
+font-family: Courier, Courier New, Verdana, Arial, serif;
+font-size: 15px;
+}
+
+.Button {
+background-color: #000044;
+font-size: 13px;
+font-family: Verdana, Tahoma, Arial, sans-serif;
+color: white;
+border: 1px solid blue;
+border-collapse: collapse;
+}
+
+.TextBoxLabel, label {
+color: #e1e1e1;
+font-weight: bold;
+cursor: pointer;
+}
+
+.EditReply {
+color: #000000;
+font-size: 9px;
+}
+
+.TableMessage {
+color: #000000;
+font-weight: bold;
+font-size: 10px;
+}
+
+.statsicon {
+text-align: center;
+vertical-align: middle;
+}
