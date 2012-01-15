@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="version.xsl"?>
+
+<!DOCTYPE versioninfo [
+<!ELEMENT versioninfo (version*)>
+<!ELEMENT version (relname,reltype,reltypename,relnum,subtype,relsvnum,fullrel,fullname)>
+<!ELEMENT relname (#PCDATA)>
+<!ELEMENT reltype (#PCDATA)>
+<!ELEMENT reltypename (#PCDATA)>
+<!ELEMENT relnum (#PCDATA)>
+<!ELEMENT subtype (#PCDATA)>
+<!ELEMENT relsvnum (#PCDATA)>
+<!ELEMENT fullrel (#PCDATA)>
+<!ELEMENT fullname (#PCDATA)>
+]>
+
+<versioninfo>
+
+<version>
+<relname>iDB</relname>
+<reltype>Al</reltype>
+<reltypename>Alpha</reltypename>
+<relnum>0.4.6</relnum>
+<subtype>SVN</subtype>
+<relsvnum>696</relsvnum>
+<fullrel>iDB Al 0.4.6</fullrel>
+<fullname>iDB Al 0.4.6 SVN 696</fullname>
+</version>
+
+<version>
+<relname>iDB-Host</relname>
+<reltype>Al</reltype>
+<reltypename>Alpha</reltypename>
+<relnum>0.4.6</relnum>
+<subtype>SVN</subtype>
+<relsvnum>696</relsvnum>
+<fullrel>iDB-Host Al 0.4.6</fullrel>
+<fullname>iDB-Host Al 0.4.6 SVN 696</fullname>
+</version>
+
+<version>
+<relname>iDBEH-Mod</relname>
+<reltype>Al</reltype>
+<reltypename>Alpha</reltypename>
+<relnum>0.4.6</relnum>
+<subtype>SVN</subtype>
+<relsvnum>696</relsvnum>
+<fullrel>iDBEH-Mod Al 0.4.6</fullrel>
+<fullname>iDBEH-Mod Al 0.4.6 SVN 696</fullname>
+</version>
+
+</versioninfo>
