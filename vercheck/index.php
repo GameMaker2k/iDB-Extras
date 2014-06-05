@@ -414,21 +414,16 @@ if(!isset($_GET['act'])) { $_GET['act'] = null; }
 if(!isset($_GET['redirect'])) { $_GET['redirect'] = null; }
 if(isset($_GET['act'])&&$_GET['act']=="update") {
 if (function_exists("stream_context_create")) {
-    $GetNewVersion = file_get_contents("http://developer.berlios.de/project/showfiles.php?group_id=6135",false,$context);
+    $GetNewVersion = file_get_contents("http://sourceforge.jp/projects/idb/releases/",false,$context);
 } else {
-    $GetNewVersion = file_get_contents("http://developer.berlios.de/project/showfiles.php?group_id=6135");
+    $GetNewVersion = file_get_contents("http://sourceforge.jp/projects/idb/releases/");
 }
-$prepreg1 = preg_quote("<TD colspan=\"3\"><h3>iDB</h3></TD>","/"); 
-$prepreg2 = preg_quote("</A></B></TD>","/");
-preg_match_all("/".$prepreg1."(.*)".$prepreg2."{1}/isU", $GetNewVersion, $NewVersionPart);
-$prepreg1 = preg_quote("SVN ","/"); 
-$prepreg2 = preg_quote("</A>","/");
-preg_match_all("/".$prepreg1."(.*)".$prepreg2."{1}/isU", $NewVersionPart[0][0], $NewVersionPart);
-$NewSVNPart = $NewVersionPart[1][0];
+preg_match_all("/([0-9])\.([0-9])\.([0-9]) ([A-Za-z]+) SVN ([0-9]+)\<\/a\>/isU", $GetNewVersion, $NewVersionPart);
+$NewSVNPart = $NewVersionPart[5][0];
 if (function_exists("stream_context_create")) {
-    $GetSVNVersion = file_get_contents("http://intdb.svn.sourceforge.net/viewvc/intdb/trunk/inc/versioninfo.php?revision=".$NewSVNPart,false,$context);
+    $GetSVNVersion = file_get_contents("http://sourceforge.net/p/intdb/svn/".$NewSVNPart."/tree/trunk/inc/versioninfo.php?format=raw",false,$context);
 } else {
-    $GetSVNVersion = file_get_contents("http://intdb.svn.sourceforge.net/viewvc/intdb/trunk/inc/versioninfo.php?revision=".$NewSVNPart);
+    $GetSVNVersion = file_get_contents("http://sourceforge.net/p/intdb/svn/".$NewSVNPart."/tree/trunk/inc/versioninfo.php?format=raw");
 } 
 $newver['subver'] = $NewSVNPart;
 $prepreg1 = preg_quote("\$VER1[0] = ","/"); 

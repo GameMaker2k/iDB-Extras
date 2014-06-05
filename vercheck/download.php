@@ -39,10 +39,10 @@ header("Expires: ".gmdate("D, d M Y H:i:s")." GMT");
 output_reset_rewrite_vars();
 $_GET['file'] = null;
 if($_GET['file']==null) {
-$mirrors['mirror'] = array("prdownload.berlios.de","downloads.sourceforge.net","get.idb.s1.jcink.com","ihost.net46.net","idb.gamemaker2k.org","of.openfoundry.org"); 
-$mirrors['url'] = array("http://prdownload.berlios.de/idb/","http://downloads.sourceforge.net/intdb/","http://get.idb.s1.jcink.com/","http://download.ihost.net46.net/","ftp://ftp.berlios.de/pub/idb/nighty-ver/","http://of.openfoundry.org/download_path/idb/0.4.6.696/");
-$mirrors['name'] = array("BerliOS","SourceForge","Get iDB @ iDB.S1.Jcink.com","Get iDB @ IHost.Net46.net","iDB Support FTP","OpenFoundry"); 
-$mirrors['links'] = array("http://developer.berlios.de/projects/idb/","http://sourceforge.net/projects/intdb","http://get.idb.s1.jcink.com/","http://download.ihost.net46.net/","http://idb.gamemaker2k.org/","http://of.openfoundry.org/projects/1220");
+$mirrors['mirror'] = array("downloads.sourceforge.net","idb.gamemaker2k.org","of.openfoundry.org"); 
+$mirrors['url'] = array("http://downloads.sourceforge.net/intdb/","http://of.openfoundry.org/download_path/idb/0.4.6.696/");
+$mirrors['name'] = array("SourceForge","iDB Support FTP","OpenFoundry"); 
+$mirrors['links'] = array("http://sourceforge.net/projects/intdb","http://idb.gamemaker2k.org/","http://of.openfoundry.org/projects/1220");
 //$files = array("iDB.zip","iDB.tar.gz","iDB.tar.bz2","iDB.tar.lzma","iDB.tar.xz","iDB.7z","iDB.deb","iDB.rpm","iDB-Host.zip","iDB-Host.tar.gz","iDB-Host.lzma","iDB-Host.tar.xz","iDB-Host.tar.bz2","iDB-Host.7z","iDB-Host.deb","iDB-Host.rpm","iDBEH-Mod.zip","iDBEH-Mod.tar.gz","iDBEH-Mod.tar.bz2","iDBEH-Mod.tar.lzma","iDBEH-Mod.tar.xz","iDBEH-Mod.7z");
 $files = array("iDB.zip","iDB.tar.gz","iDB.tar.bz2","iDB.tar.xz","iDB.7z","iDB-Host.zip","iDB-Host.tar.gz","iDB-Host.tar.xz","iDB-Host.tar.bz2","iDB-Host.7z","iDBEH-Mod.zip","iDBEH-Mod.tar.gz","iDBEH-Mod.tar.bz2","iDBEH-Mod.tar.xz","iDBEH-Mod.7z","iDBEH-SubMod.zip","iDBEH-SubMod.tar.gz","iDBEH-SubMod.tar.bz2","iDBEH-SubMod.tar.xz","iDBEH-SubMod.7z","webinstaller.zip","webinstaller.tar.gz","webinstaller.tar.bz2","webinstaller.7z");
 ?>
