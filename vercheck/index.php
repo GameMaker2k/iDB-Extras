@@ -418,7 +418,7 @@ if (function_exists("stream_context_create")) {
 } else {
     $GetNewVersion = file_get_contents("http://sourceforge.jp/projects/idb/releases/");
 }
-preg_match_all("/([0-9])\.([0-9])\.([0-9]) ([A-Za-z]+) SVN ([0-9]+)\<\/a\>/isU", $GetNewVersion, $NewVersionPart);
+preg_match_all("/([0-9])\.([0-9])\.([0-9]) ([A-Za-z]+) SVN ([0-9]+)/is", $GetNewVersion, $NewVersionPart);
 $NewSVNPart = $NewVersionPart[5][0];
 if (function_exists("stream_context_create")) {
     $GetSVNVersion = file_get_contents("http://sourceforge.net/p/intdb/svn/".$NewSVNPart."/tree/trunk/inc/versioninfo.php?format=raw",false,$context);
@@ -477,27 +477,7 @@ $VersionXML .= "<relsvnum>".$newver['subver']."</relsvnum>\n";
 $VersionXML .= "<fullrel>iDB ".$newver['reltype']." ".$newver['ver']."</fullrel>\n";
 $VersionXML .= "<fullname>iDB ".$newver['reltype']." ".$newver['ver']." ".$newver['subtype']." ".$newver['subver']."</fullname>\n";
 $VersionXML .= "</version>\n\n";
-$VersionXML .= "<version>\n";
-$VersionXML .= "<relname>iDB-Host</relname>\n";
-$VersionXML .= "<reltype>".$newver['reltype']."</reltype>\n";
-$VersionXML .= "<reltypename>".$newver['fullreltype']."</reltypename>\n";
-$VersionXML .= "<relnum>".$newver['ver']."</relnum>\n";
-$VersionXML .= "<subtype>".$newver['subtype']."</subtype>\n";
-$VersionXML .= "<relsvnum>".$newver['subver']."</relsvnum>\n";
-$VersionXML .= "<fullrel>iDB-Host ".$newver['reltype']." ".$newver['ver']."</fullrel>\n";
-$VersionXML .= "<fullname>iDB-Host ".$newver['reltype']." ".$newver['ver']." ".$newver['subtype']." ".$newver['subver']."</fullname>\n";
-$VersionXML .= "</version>\n\n";
-$VersionXML .= "<version>\n";
-$VersionXML .= "<relname>iDBEH-Mod</relname>\n";
-$VersionXML .= "<reltype>".$newver['reltype']."</reltype>\n";
-$VersionXML .= "<reltypename>".$newver['fullreltype']."</reltypename>\n";
-$VersionXML .= "<relnum>".$newver['ver']."</relnum>\n";
-$VersionXML .= "<subtype>".$newver['subtype']."</subtype>\n";
-$VersionXML .= "<relsvnum>".$newver['subver']."</relsvnum>\n";
-$VersionXML .= "<fullrel>iDBEH-Mod ".$newver['reltype']." ".$newver['ver']."</fullrel>\n";
-$VersionXML .= "<fullname>iDBEH-Mod ".$newver['reltype']." ".$newver['ver']." ".$newver['subtype']." ".$newver['subver']."</fullname>\n";
-$VersionXML .= "</version>\n\n";
-$VersionXML .= "</versioninfo>";
+$VersionXML .= "</versioninfo>\n";
 $fp = fopen("./inc/version.xml","w+");
 fwrite($fp, $VersionXML);
 fclose($fp); }
