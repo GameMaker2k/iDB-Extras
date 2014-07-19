@@ -11,7 +11,7 @@
     Copyright 2009-2010 iDB Support - http://idb.berlios.de/
     Copyright 2009-2010 Game Maker 2k - http://gamemaker2k.org/
 
-    $FileInfo: index.php - Last Update: 4/27/2009 Ver 2.5 - Author: cooldude2k $
+    $FileInfo: index.php - Last Update: 07/18/2014 Ver 3.1.2 - Author: cooldude2k $
 */
 header('Location: ../index.php');
 ?>

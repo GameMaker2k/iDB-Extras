@@ -11,7 +11,7 @@
     Copyright 2009-2011 iDB Support - http://idb.berlios.de/
     Copyright 2009-2011 Game Maker 2k - http://gamemaker2k.org/
 
-    $FileInfo: index.php - Last Update: 08/02/2011 Ver 3.1.2 - Author: cooldude2k $
+    $FileInfo: index.php - Last Update: 07/18/2014 Ver 3.1.2 - Author: cooldude2k $
 */
 /* Change to your url. */
 @ini_set("html_errors", false);
@@ -39,6 +39,7 @@ header("Last-Modified: ".gmdate("D, d M Y H:i:s")." GMT");
 header("Expires: ".gmdate("D, d M Y H:i:s")." GMT");
 output_reset_rewrite_vars();
 require_once('inc/killglobals.php');
+$get_content_by = "file_get_contents"; // Can be file_get_contents or curl
 $site_url = "http://localhost/vercheck/";
 $agent_site_url = $site_url."?act=vercheck";
 $site_name = "iDB Version checker";
@@ -51,10 +52,14 @@ $appver = array($ver_exp[0],$ver_exp[1],$ver_exp[2],$ver_exp[3]);//Version of pr
 $csryear = "2004"; $cryear = date("Y"); if($cryear<=2004) { $cryear = "2005"; }
 $site_useragent = "Mozilla/5.0 (compatible; iDB-VerCheck/".$site_version."; +".$agent_site_url.")";
 // Programs to check for add to array.
-// $iDBArray = array("RDB", "iDB", "iDB-Host", "iDBEH-Mod");//ReneeDB
-$iDBArray = array("iDB", "iDB-Host", "iDBEH-Mod");
+// $iDBArray = array("IntDB", "iDB");//IntDB
+$iDBArray = array("iDB");
+@ini_set("user_agent", $site_useragent);
+if(!isset($get_content_by) || ($get_content_by!="file_get_contents" && $get_content_by!="curl")) { 
+   $get_content_by = "file_get_contents"; }
 @ini_set("user_agent", $site_useragent);
 if (function_exists("stream_context_create")) {
+if($get_content_by=="file_get_contents") {
 $opts = array(
   'http' => array(
     'method' => "GET",
@@ -70,7 +75,7 @@ $opts = array(
                 "Client-IP: ".$_SERVER['REMOTE_ADDR']."\r\n"
   )
 );
-$context = stream_context_create($opts); }
+$context = stream_context_create($opts); } }
 function version_info($proname,$subver,$ver,$supver,$reltype,$svnver,$showsvn) {
 	$return_var = $proname." ".$reltype." ".$subver.".".$ver.".".$supver;
 	if($showsvn==false) { $showsvn = null; }
@@ -116,10 +121,31 @@ if(!isset($_GET['redirect'])) { $_GET['redirect'] = "off"; }
 
     # location of robots.txt file
     if (function_exists("stream_context_create")) {
-        $robotstxt = file_get_contents("http://{$parsed['host']}/robots.txt",false,$context);
+        if($get_content_by=="file_get_contents") {
+           $robotstxt = file_get_contents("http://{$parsed['host']}/robots.txt",false,$context); }
     } else {
-        $robotstxt = file_get_contents("http://{$parsed['host']}/robots.txt");
+        if($get_content_by=="file_get_contents") {
+           $robotstxt = file_get_contents("http://{$parsed['host']}/robots.txt"); }
     }
+    if($get_content_by=="curl") {
+       $ch = curl_init(); 
+       curl_setopt($ch, CURLOPT_URL, "http://{$parsed['host']}/robots.txt");
+       curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept-Language: *",
+                                                  "User-Agent: ".$site_useragent,
+                                                  "Accept: */*",
+                                                  "Connection: keep-alive",
+                                                  "Referer: ".$agent_site_url,
+                                                  "From: ".$agent_site_url,
+                                                  "Via: ".$_SERVER['REMOTE_ADDR'],
+                                                  "Forwarded: ".$_SERVER['REMOTE_ADDR'],
+                                                  "X-Forwarded-For: ".$_SERVER['REMOTE_ADDR'],
+                                                  "Client-IP: ".$_SERVER['REMOTE_ADDR']));
+       curl_setopt($ch, CURLOPT_HEADER, 0);
+       curl_setopt($ch, CURLOPT_VERBOSE, 0);
+       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+       curl_setopt($ch, CURLOPT_USERAGENT, $site_useragent);
+       $robotstxt = curl_exec($ch);
+       curl_close($ch); }
     if(!$robotstxt) { return true; }
 
     $rules = array();
@@ -224,16 +250,58 @@ if(isset($_GET['bid'])) {
 	$actchange = preg_quote("act=view", '/');
 	$_GET['bid'] = preg_replace("/".$actchange."/i", "act=versioninfo", $_GET['bid']);
     if (function_exists("stream_context_create")) {
-    	$GetTitle = file_get_contents($_GET['bid'],false,$context);
+        if($get_content_by=="file_get_contents") {
+    	   $GetTitle = file_get_contents($_GET['bid'],false,$context); }
     } else {
-    	$GetTitle = file_get_contents($_GET['bid']);
-    } }
+        if($get_content_by=="file_get_contents") {
+    	   $GetTitle = file_get_contents($_GET['bid']); }
+    } 
+    if($get_content_by=="curl") {
+       $ch = curl_init(); 
+       curl_setopt($ch, CURLOPT_URL, $_GET['bid']);
+       curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept-Language: *",
+    	                                          "User-Agent: ".$site_useragent,
+    	                                          "Accept: */*",
+    	                                          "Connection: keep-alive",
+    	                                          "Referer: ".$agent_site_url,
+    	                                          "From: ".$agent_site_url,
+    	                                          "Via: ".$_SERVER['REMOTE_ADDR'],
+    	                                          "Forwarded: ".$_SERVER['REMOTE_ADDR'],
+    	                                          "X-Forwarded-For: ".$_SERVER['REMOTE_ADDR'],
+    	                                          "Client-IP: ".$_SERVER['REMOTE_ADDR']));
+       curl_setopt($ch, CURLOPT_HEADER, 0);
+       curl_setopt($ch, CURLOPT_VERBOSE, 0);
+       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+       curl_setopt($ch, CURLOPT_USERAGENT, $site_useragent);
+       $GetTitle = curl_exec($ch);
+       curl_close($ch); } }
 	if($_GET['vercheck']!="newtype") {
     if (function_exists("stream_context_create")) {
-    	$GetTitle = file_get_contents($_GET['bid'],false,$context);
+        if($get_content_by=="file_get_contents") {
+    	   $GetTitle = file_get_contents($_GET['bid'],false,$context); }
     } else {
-    	$GetTitle = file_get_contents($_GET['bid']);
-    } }
+        if($get_content_by=="file_get_contents") {
+    	   $GetTitle = file_get_contents($_GET['bid']); }
+    } 
+    if($get_content_by=="curl") {
+       $ch = curl_init(); 
+       curl_setopt($ch, CURLOPT_URL, $_GET['bid']);
+       curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept-Language: *",
+    	                                          "User-Agent: ".$site_useragent,
+    	                                          "Accept: */*",
+    	                                          "Connection: keep-alive",
+    	                                          "Referer: ".$agent_site_url,
+    	                                          "From: ".$agent_site_url,
+    	                                          "Via: ".$_SERVER['REMOTE_ADDR'],
+    	                                          "Forwarded: ".$_SERVER['REMOTE_ADDR'],
+    	                                          "X-Forwarded-For: ".$_SERVER['REMOTE_ADDR'],
+    	                                          "Client-IP: ".$_SERVER['REMOTE_ADDR']));
+       curl_setopt($ch, CURLOPT_HEADER, 0);
+       curl_setopt($ch, CURLOPT_VERBOSE, 0);
+       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+       curl_setopt($ch, CURLOPT_USERAGENT, $site_useragent);
+       $GetTitle = curl_exec($ch);
+       curl_close($ch); } }
 	$_GET['bid'] = htmlspecialchars($_GET['bid']);
 	preg_match_all("/<title>(.*?)<\/title>/i", $GetTitle, $GetFullTitle);
 	$GetConType = $GetTitle;
@@ -262,8 +330,6 @@ if(isset($_GET['bid'])) {
 	preg_match_all("/".$prequote1."(.*?)".$prequote2."/i", $GetConType, $GetVerNum); }
 	if(!isset($GetVerNum[1][0])) { $GetVerNum[1][0] = null; }
 	$GetVerNum = $GetVerNum[1][0];
-	$GetVerNum = preg_replace("/iDB EH Mod/i", "iDBEH-Mod", $GetVerNum);
-	$GetVerNum = preg_replace("/iDB EH/i", "iDB-Host", $GetVerNum);
 	$GetVerNum = preg_replace("/\s/i", "|", $GetVerNum);
 	if(!isset($_GET['name'])) { $_GET['name'] = $GetVerNum; }
 	if(!isset($GetCType[1][0])) {
@@ -414,17 +480,59 @@ if(!isset($_GET['act'])) { $_GET['act'] = null; }
 if(!isset($_GET['redirect'])) { $_GET['redirect'] = null; }
 if(isset($_GET['act'])&&$_GET['act']=="update") {
 if (function_exists("stream_context_create")) {
-    $GetNewVersion = file_get_contents("http://sourceforge.jp/projects/idb/releases/",false,$context);
+    if($get_content_by=="file_get_contents") {
+       $GetNewVersion = file_get_contents("http://sourceforge.jp/projects/idb/releases/",false,$context); }
 } else {
-    $GetNewVersion = file_get_contents("http://sourceforge.jp/projects/idb/releases/");
+    if($get_content_by=="file_get_contents") {
+       $GetNewVersion = file_get_contents("http://sourceforge.jp/projects/idb/releases/"); }
 }
+if($get_content_by=="curl") {
+   $ch = curl_init(); 
+   curl_setopt($ch, CURLOPT_URL, "http://sourceforge.jp/projects/idb/releases/");
+   curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept-Language: *",
+                                              "User-Agent: ".$site_useragent,
+                                              "Accept: */*",
+                                              "Connection: keep-alive",
+                                              "Referer: ".$agent_site_url,
+                                              "From: ".$agent_site_url,
+                                              "Via: ".$_SERVER['REMOTE_ADDR'],
+                                              "Forwarded: ".$_SERVER['REMOTE_ADDR'],
+                                              "X-Forwarded-For: ".$_SERVER['REMOTE_ADDR'],
+                                              "Client-IP: ".$_SERVER['REMOTE_ADDR']));
+   curl_setopt($ch, CURLOPT_HEADER, 0);
+   curl_setopt($ch, CURLOPT_VERBOSE, 0);
+   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+   curl_setopt($ch, CURLOPT_USERAGENT, $site_useragent);
+   $GetNewVersion = curl_exec($ch);
+   curl_close($ch); }
 preg_match_all("/([0-9])\.([0-9])\.([0-9]) ([A-Za-z]+) SVN ([0-9]+)/is", $GetNewVersion, $NewVersionPart);
 $NewSVNPart = $NewVersionPart[5][0];
 if (function_exists("stream_context_create")) {
-    $GetSVNVersion = file_get_contents("http://sourceforge.net/p/intdb/svn/".$NewSVNPart."/tree/trunk/inc/versioninfo.php?format=raw",false,$context);
+    if($get_content_by=="file_get_contents") {
+       $GetSVNVersion = file_get_contents("http://sourceforge.net/p/intdb/svn/".$NewSVNPart."/tree/trunk/inc/versioninfo.php?format=raw",false,$context); }
 } else {
-    $GetSVNVersion = file_get_contents("http://sourceforge.net/p/intdb/svn/".$NewSVNPart."/tree/trunk/inc/versioninfo.php?format=raw");
+    if($get_content_by=="file_get_contents") {
+       $GetSVNVersion = file_get_contents("http://sourceforge.net/p/intdb/svn/".$NewSVNPart."/tree/trunk/inc/versioninfo.php?format=raw"); }
 } 
+if($get_content_by=="curl") {
+   $ch = curl_init(); 
+   curl_setopt($ch, CURLOPT_URL, "http://sourceforge.net/p/intdb/svn/".$NewSVNPart."/tree/trunk/inc/versioninfo.php?format=raw");
+   curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept-Language: *",
+                                              "User-Agent: ".$site_useragent,
+                                              "Accept: */*",
+                                              "Connection: keep-alive",
+                                              "Referer: ".$agent_site_url,
+                                              "From: ".$agent_site_url,
+                                              "Via: ".$_SERVER['REMOTE_ADDR'],
+                                              "Forwarded: ".$_SERVER['REMOTE_ADDR'],
+                                              "X-Forwarded-For: ".$_SERVER['REMOTE_ADDR'],
+                                             "Client-IP: ".$_SERVER['REMOTE_ADDR']));
+   curl_setopt($ch, CURLOPT_HEADER, 0);
+   curl_setopt($ch, CURLOPT_VERBOSE, 0);
+   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+   curl_setopt($ch, CURLOPT_USERAGENT, $site_useragent);
+   $GetNewVersion = curl_exec($ch);
+   curl_close($ch); }
 $newver['subver'] = $NewSVNPart;
 $prepreg1 = preg_quote("\$VER1[0] = ","/"); 
 $prepreg2 = preg_quote(";","/");
@@ -485,7 +593,7 @@ fclose($fp); }
 if($_GET['act']!="update") {
 $VersionFile = file_get_contents("inc/version.xml");
 if(!isset($iDBArray)) {
-$iDBArray = array("iDB", "iDB-Host", "iDBEH-Mod"); }
+$iDBArray = array("iDB"); }
 $NamePart = explode("|", $_GET['name']);
 if(count($NamePart)>=5) { 
 $_GET['name'] = $NamePart[0];
