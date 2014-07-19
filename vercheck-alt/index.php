@@ -116,8 +116,8 @@ if(!isset($_GET['redirect'])) { $_GET['redirect'] = "off"; }
 
     # location of robots.txt file
     $ch = curl_init(); 
-    curl_setopt($ch, CURLOPT_URL, urlencode("http://{$parsed['host']}/robots.txt"));
-    curl_setopt($ch,CURLOPT_HTTPHEADER,array("Accept-Language: *",
+    curl_setopt($ch, CURLOPT_URL, "http://{$parsed['host']}/robots.txt");
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept-Language: *",
                                              "User-Agent: ".$site_useragent,
                                              "Accept: */*",
                                              "Connection: keep-alive",
@@ -237,8 +237,8 @@ if(isset($_GET['bid'])) {
 	$actchange = preg_quote("act=view", '/');
 	$_GET['bid'] = preg_replace("/".$actchange."/i", "act=versioninfo", $_GET['bid']);
     $ch = curl_init(); 
-    curl_setopt($ch, CURLOPT_URL, urlencode($_GET['bid']));
-    curl_setopt($ch,CURLOPT_HTTPHEADER,array("Accept-Language: *",
+    curl_setopt($ch, CURLOPT_URL, $_GET['bid']);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept-Language: *",
     	                                     "User-Agent: ".$site_useragent,
     	                                     "Accept: */*",
     	                                     "Connection: keep-alive",
@@ -257,8 +257,8 @@ if(isset($_GET['bid'])) {
     }
 	if($_GET['vercheck']!="newtype") {
     $ch = curl_init(); 
-    curl_setopt($ch, CURLOPT_URL, urlencode($_GET['bid']));
-    curl_setopt($ch,CURLOPT_HTTPHEADER,array("Accept-Language: *",
+    curl_setopt($ch, CURLOPT_URL, $_GET['bid']);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept-Language: *",
     	                                     "User-Agent: ".$site_useragent,
     	                                     "Accept: */*",
     	                                     "Connection: keep-alive",
@@ -455,8 +455,8 @@ if(!isset($_GET['act'])) { $_GET['act'] = null; }
 if(!isset($_GET['redirect'])) { $_GET['redirect'] = null; }
 if(isset($_GET['act'])&&$_GET['act']=="update") {
 $ch = curl_init(); 
-curl_setopt($ch, CURLOPT_URL, urlencode("http://sourceforge.jp/projects/idb/releases/"));
-curl_setopt($ch,CURLOPT_HTTPHEADER,array("Accept-Language: *",
+curl_setopt($ch, CURLOPT_URL, "http://sourceforge.jp/projects/idb/releases/");
+curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept-Language: *",
                                          "User-Agent: ".$site_useragent,
                                          "Accept: */*",
                                          "Connection: keep-alive",
@@ -475,8 +475,8 @@ curl_close($ch);
 preg_match_all("/([0-9])\.([0-9])\.([0-9]) ([A-Za-z]+) SVN ([0-9]+)/is", $GetNewVersion, $NewVersionPart);
 $NewSVNPart = $NewVersionPart[5][0];
 $ch = curl_init(); 
-curl_setopt($ch, CURLOPT_URL, urlencode("http://sourceforge.net/p/intdb/svn/".$NewSVNPart."/tree/trunk/inc/versioninfo.php?format=raw"));
-curl_setopt($ch,CURLOPT_HTTPHEADER,array("Accept-Language: *",
+curl_setopt($ch, CURLOPT_URL, "http://sourceforge.net/p/intdb/svn/".$NewSVNPart."/tree/trunk/inc/versioninfo.php?format=raw");
+curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept-Language: *",
                                          "User-Agent: ".$site_useragent,
                                          "Accept: */*",
                                          "Connection: keep-alive",
