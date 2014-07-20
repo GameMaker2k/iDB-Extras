@@ -8,8 +8,8 @@
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     Revised BSD License for more details.
 
-    Copyright 2009-2011 iDB Support - http://idb.berlios.de/
-    Copyright 2009-2011 Game Maker 2k - http://gamemaker2k.org/
+    Copyright 2009-2014 iDB Support - http://idb.berlios.de/
+    Copyright 2009-2014 Game Maker 2k - http://gamemaker2k.org/
 
     $FileInfo: index.php - Last Update: 07/18/2014 Ver 3.1.2 - Author: cooldude2k $
 */
@@ -229,7 +229,7 @@ if(!isset($_GET['name'])&&!isset($_GET['bid'])) {
 </div>
 </form>
 
-<div class="copyright"><br />Powered by <a href="http://idb.berlios.de/" title="iDB-VerCheck <?php echo $site_version; ?>" onclick="window.open(this.href);return false;">iDB VerCheck</a> &copy; <a href="http://idb.berlios.de/support/category.php?act=view&amp;id=2" title="Game Maker 2k" onclick="window.open(this.href);return false;">Game Maker 2k</a> @ <?php echo $csryear." - ".$cryear; ?></div>
+<div class="copyright"><br />Powered by <a href="http://ja.gamemaker2k.org/" title="iDB-VerCheck <?php echo $site_version; ?>" onclick="window.open(this.href);return false;">iDB VerCheck</a> &copy; <a href="http://ja.gamemaker2k.org/support/category.php?act=view&amp;id=2" title="Game Maker 2k" onclick="window.open(this.href);return false;">Game Maker 2k</a> @ <?php echo $csryear." - ".$cryear; ?></div>
 <!-- Stephanie Braun o_O -->
 </body>
 </html>
@@ -325,7 +325,7 @@ if(isset($_GET['bid'])) {
 	$prequote2 = preg_quote("\" />", '/');
 	preg_match_all("/".$prequote1."(.*?)".$prequote2."/i", $GetConType, $GetVerNum); }
 	if(!isset($GetVerNum[1][0])) { 
-	$prequote1 = preg_quote("<a href=\"http://idb.berlios.de/\" title=\"", '/');
+	$prequote1 = preg_quote("<a href=\"http://ja.gamemaker2k.org/\" title=\"", '/');
 	$prequote2 = preg_quote("\" onclick=\"window.open(this.href);return false;\">", '/');
 	preg_match_all("/".$prequote1."(.*?)".$prequote2."/i", $GetConType, $GetVerNum); }
 	if(!isset($GetVerNum[1][0])) { $GetVerNum[1][0] = null; }
@@ -610,7 +610,7 @@ if(!isset($_GET['name'])||!isset($_GET['reltype'])||!isset($_GET['ver'])||
 	!isset($_GET['subtype'])||!isset($_GET['subver'])) {
 	echo "Sorry need more info to check version."; ?>
 
-<div class="copyright"><br />Powered by <a href="http://idb.berlios.de/" title="iDB-VerCheck <?php echo $site_version; ?>" onclick="window.open(this.href);return false;">iDB VerCheck</a> &copy; <a href="http://idb.berlios.de/support/category.php?act=view&amp;id=2" title="Game Maker 2k" onclick="window.open(this.href);return false;">Game Maker 2k</a> @ <?php echo $csryear." - ".$cryear; ?></div>
+<div class="copyright"><br />Powered by <a href="http://ja.gamemaker2k.org/" title="iDB-VerCheck <?php echo $site_version; ?>" onclick="window.open(this.href);return false;">iDB VerCheck</a> &copy; <a href="http://ja.gamemaker2k.org/support/category.php?act=view&amp;id=2" title="Game Maker 2k" onclick="window.open(this.href);return false;">Game Maker 2k</a> @ <?php echo $csryear." - ".$cryear; ?></div>
 <!-- Stephanie Braun o_O -->
 </body>
 </html>
@@ -622,7 +622,7 @@ if(!isset($_GET['name'])||!isset($_GET['reltype'])||!isset($_GET['ver'])||
 if(count($NamePart)==1) { $_GET['name'] = $NamePart[0]; }
 if(!in_array($_GET['name'],$iDBArray)) { echo "Sorry cound not find ".$_GET['name']."."; ?>
 
-<div class="copyright"><br />Powered by <a href="http://idb.berlios.de/" title="iDB-VerCheck <?php echo $site_version; ?>" onclick="window.open(this.href);return false;">iDB VerCheck</a> &copy; <a href="http://idb.berlios.de/support/category.php?act=view&amp;id=2" title="Game Maker 2k" onclick="window.open(this.href);return false;">Game Maker 2k</a> @ <?php echo $csryear." - ".$cryear; ?></div>
+<div class="copyright"><br />Powered by <a href="http://ja.gamemaker2k.org/" title="iDB-VerCheck <?php echo $site_version; ?>" onclick="window.open(this.href);return false;">iDB VerCheck</a> &copy; <a href="http://ja.gamemaker2k.org/support/category.php?act=view&amp;id=2" title="Game Maker 2k" onclick="window.open(this.href);return false;">Game Maker 2k</a> @ <?php echo $csryear." - ".$cryear; ?></div>
 </body>
 </html>
 <?php exit(); }
@@ -819,7 +819,7 @@ if($_GET['bid']!==null) {
 $VersionJS .= "var checkingsite = 'Checking board: <a href=\"".$_GET['bid']."\" title=\"".$GetTitle."\">".$GetTitle."<\/a><br />';\n"; }
 if($_GET['bid']===null) {
 $VersionJS .= "var checkingsite = '';\n"; }
-$VersionJS .= "var copyright = '<br \/>Powered by <a href=\"http://idb.berlios.de/\" title=\"iDB-VerCheck ".$site_version."\" onclick=\"window.open(this.href);return false;\">iDB VerCheck</a> &#169; <a href=\"http://idb.berlios.de/support/category.php?act=view&amp;id=2\" title=\"Game Maker 2k\" onclick=\"window.open(this.href);return false;\">Game Maker 2k<\/a> @ ".$csryear." - ".$cryear."';\n";
+$VersionJS .= "var copyright = '<br \/>Powered by <a href=\"http://ja.gamemaker2k.org/\" title=\"iDB-VerCheck ".$site_version."\" onclick=\"window.open(this.href);return false;\">iDB VerCheck</a> &#169; <a href=\"http://ja.gamemaker2k.org/support/category.php?act=view&amp;id=2\" title=\"Game Maker 2k\" onclick=\"window.open(this.href);return false;\">Game Maker 2k<\/a> @ ".$csryear." - ".$cryear."';\n";
 if($FullRelNum<$MyFullRelNum) {
 $VersionJS .= "document.getElementById('iverinfo').innerHTML = vercheckinfo+'<img src=\"".$site_url."inc/pics/old.png\" alt=\"You seem to be using a old version.\" title=\"You seem to be using a old version.\" />&#160;Warning: A new version is available. <a href=\"".$download_url."\">Click Here<\/a><br />'+ourverinfo+checkingsite+'<br />';"; }
 if($FullRelNum==$MyFullRelNum) {
@@ -850,7 +850,7 @@ echo "</div>"; } }
 if($_GET['redirect']!="on"&&$_GET['redirect']!="xml"&&$_GET['redirect']!="js") {
 ?>
 
-<div class="copyright"><br />Powered by <a href="http://idb.berlios.de/" title="iDB-VerCheck <?php echo $site_version; ?>" onclick="window.open(this.href);return false;">iDB VerCheck</a> &copy; <a href="http://idb.berlios.de/support/category.php?act=view&amp;id=2" title="Game Maker 2k" onclick="window.open(this.href);return false;">Game Maker 2k</a> @ <?php echo $csryear." - ".$cryear; ?></div>
+<div class="copyright"><br />Powered by <a href="http://ja.gamemaker2k.org/" title="iDB-VerCheck <?php echo $site_version; ?>" onclick="window.open(this.href);return false;">iDB VerCheck</a> &copy; <a href="http://ja.gamemaker2k.org/support/category.php?act=view&amp;id=2" title="Game Maker 2k" onclick="window.open(this.href);return false;">Game Maker 2k</a> @ <?php echo $csryear." - ".$cryear; ?></div>
 <!-- Stephanie Braun o_O -->
 </body>
 </html>

@@ -8,8 +8,8 @@
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     Revised BSD License for more details.
 
-    Copyright 2009-2011 iDB Support - http://idb.berlios.de/
-    Copyright 2009-2011 Game Maker 2k - http://gamemaker2k.org/
+    Copyright 2009-2014 iDB Support - http://idb.berlios.de/
+    Copyright 2009-2014 Game Maker 2k - http://gamemaker2k.org/
 
     $FileInfo: index.php - Last Update: 07/18/2014 Ver 3.1.2 - Author: cooldude2k $
 */
@@ -79,7 +79,7 @@ $l = 0; $nums = count($files); ?>
 echo "<!-- Renee Sabonis ^_^ -->"; ?>
 </ul></li></ul>
 <?php ++$i; } ?>
-<div class="copyright">Powered by <a href="http://idb.berlios.de/" title="iDB Al 0.4.7 SVN 753" onclick="window.open(this.href);return false;">iDB VerCheck</a> &copy; <a href="http://idb.berlios.de/support/category.php?act=view&amp;id=2" title="Game Maker 2k" onclick="window.open(this.href);return false;">Game Maker 2k</a> @ 2004 - 2011</div>
+<div class="copyright">Powered by <a href="http://ja.gamemaker2k.org/" title="iDB Al 0.4.7 SVN 753" onclick="window.open(this.href);return false;">iDB VerCheck</a> &copy; <a href="http://ja.gamemaker2k.org/support/category.php?act=view&amp;id=2" title="Game Maker 2k" onclick="window.open(this.href);return false;">Game Maker 2k</a> @ 2004 - 2011</div>
 <?php echo "<!-- Dagmara O_o -->"; ?>
 </body>
 </html>

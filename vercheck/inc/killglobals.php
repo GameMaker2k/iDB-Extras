@@ -8,8 +8,8 @@
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     Revised BSD License for more details.
 
-    Copyright 2009-2010 iDB Support - http://idb.berlios.de/
-    Copyright 2009-2010 Game Maker 2k - http://gamemaker2k.org/
+    Copyright 2009-2014 iDB Support - http://idb.berlios.de/
+    Copyright 2009-2014 Game Maker 2k - http://gamemaker2k.org/
 	Kill Register Globals (Register Globals are very lame we dont need them anyways. :P)
 
     $FileInfo: index.php - Last Update: 07/18/2014 Ver 3.1.2 - Author: cooldude2k $
