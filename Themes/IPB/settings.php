@@ -62,7 +62,11 @@ $ThemeSet['RedirectIcon'] = "<div style=\"text-align: center;\"><img src=\"theme
 $ThemeSet['TitleIcon'] = "<img src=\"themes/IPB/nav.gif\" alt=\"-&gt;\" title=\"-&gt;\" /> ";
 $ThemeSet['NavLinkIcon'] = "<img src=\"themes/IPB/navbar.gif\" alt=\"-&gt;\" title=\"-&gt;\" /> ";
 $ThemeSet['NavLinkDivider'] = "&nbsp;-&gt;&nbsp;";
-$ThemeSet['StatsIcon'] = "<img src=\"themes/IPB/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
+$ThemeSet['BoardStatsIcon'] = "<img src=\"themes/IPB/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
+$ThemeSet['MemberStatsIcon'] = "<img src=\"themes/IPB/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
+$ThemeSet['BirthdayStatsIcon'] = "<img src=\"themes/IPB/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
+$ThemeSet['EventStatsIcon'] = "<img src=\"themes/IPB/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
+$ThemeSet['OnlineStatsIcon'] = "<img src=\"themes/IPB/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
 $ThemeSet['NoAvatar'] = "themes/IPB/noavatar.png";
 $ThemeSet['NoAvatarSize'] = "100x100";
 ?>

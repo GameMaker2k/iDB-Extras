@@ -62,7 +62,11 @@ $ThemeSet['ForumIcon'] = "<div style=\"text-align: center;\"><img src=\"themes/I
 $ThemeSet['SubForumIcon'] = "<div style=\"text-align: center;\"><img src=\"themes/IPBAlt/subforum.gif\" alt=\"SubForum\" title=\"SubForum\" /></div>";
 $ThemeSet['RedirectIcon'] = "<div style=\"text-align: center;\"><img src=\"themes/IPBAlt/redirect.gif\" alt=\"Redirect Forum\" title=\"Redirect Forum\" /></div>";
 $ThemeSet['TitleIcon'] = "<img src=\"themes/IPBAlt/nav.gif\" alt=\"-&gt;\" title=\"-&gt;\" /> ";
-$ThemeSet['StatsIcon'] = "<img src=\"themes/IPBAlt/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
+$ThemeSet['BoardStatsIcon'] = "<img src=\"themes/IPBAlt/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
+$ThemeSet['MemberStatsIcon'] = "<img src=\"themes/IPBAlt/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
+$ThemeSet['BirthdayStatsIcon'] = "<img src=\"themes/IPBAlt/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
+$ThemeSet['EventStatsIcon'] = "<img src=\"themes/IPBAlt/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
+$ThemeSet['OnlineStatsIcon'] = "<img src=\"themes/IPBAlt/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
 $ThemeSet['NoAvatar'] = "themes/IPBAlt/noavatar.png";
 $ThemeSet['NoAvatarSize'] = "100x100";
 ?>

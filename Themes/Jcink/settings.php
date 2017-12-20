@@ -72,7 +72,11 @@ $ThemeSet['RedirectIcon'] = "<div style=\"text-align: center;\"><img src=\"theme
 $ThemeSet['TitleIcon'] = "<img src=\"themes/Jcink/nav.gif\" alt=\"-&gt;\" title=\"-&gt;\" /> ";
 $ThemeSet['NavLinkIcon'] = "&gt;&gt; ";
 $ThemeSet['NavLinkDivider'] = "&nbsp;-&gt;&nbsp;";
-$ThemeSet['StatsIcon'] = "<img src=\"themes/Jcink/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
+$ThemeSet['BoardStatsIcon'] = "<img src=\"themes/Jcink/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
+$ThemeSet['MemberStatsIcon'] = "<img src=\"themes/Jcink/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
+$ThemeSet['BirthdayStatsIcon'] = "<img src=\"themes/Jcink/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
+$ThemeSet['EventStatsIcon'] = "<img src=\"themes/Jcink/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
+$ThemeSet['OnlineStatsIcon'] = "<img src=\"themes/Jcink/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
 $ThemeSet['NoAvatar'] = "themes/Jcink/noavatar.png";
 $ThemeSet['NoAvatarSize'] = "100x100";
 ?>
