@@ -64,23 +64,19 @@ $files = array("iDB.zip","iDB.tar.gz","iDB.tar.bz2","iDB.tar.xz","iDB.7z","iDB-H
 <meta name="distribution" content="global">
 <link rel="icon" href="favicon.ico" type="image/icon">
 <link rel="shortcut icon" href="favicon.ico" type="image/icon">
-<?php echo "<!-- Katarzyna o_O -->"; ?>
 </head>
 
 <body>
 <?php $i = 0; $num = count($mirrors['mirror']);
-echo "<!-- Renee Sabonis ^_^ -->";
 while($i < $num) {
 $l = 0; $nums = count($files); ?>
 <ul><li><a href="<?php echo $mirrors['links'][$i]; ?>"><?php echo $mirrors['name'][$i]; ?></a><ul>
 <?php while($l < $nums) { ?>
 	<li><a href="<?php echo $mirrors['url'][$i]; ?><?php echo $files[$l]; ?>"><?php echo $files[$l]; ?></a></li>
 <?php ++$l; } 
-echo "<!-- Renee Sabonis ^_^ -->"; ?>
 </ul></li></ul>
 <?php ++$i; } ?>
 <div class="copyright">Powered by <a href="http://ja.gamemaker2k.org/" title="iDB Al 0.4.7 SVN 753" onclick="window.open(this.href);return false;">iDB VerCheck</a> &copy; <a href="http://ja.gamemaker2k.org/support/category.php?act=view&amp;id=2" title="Game Maker 2k" onclick="window.open(this.href);return false;">Game Maker 2k</a> @ 2004 - 2011</div>
-<?php echo "<!-- Dagmara O_o -->"; ?>
 </body>
 </html>
 <?php } ?>

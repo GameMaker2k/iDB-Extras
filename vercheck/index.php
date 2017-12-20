@@ -213,11 +213,9 @@ if(!isset($_GET['name'])&&!isset($_GET['bid'])) {
 <meta name="distribution" content="global">
 <link rel="icon" href="favicon.ico" type="image/icon">
 <link rel="shortcut icon" href="favicon.ico" type="image/icon">
-<!-- Katarzyna O_o -->
 </head>
 
 <body>
-<!-- Renee Sabonis ^_^ -->
 <form method="get" action="?act=vercheck&amp;vercheck=newtype&amp;encoded=false">
 <div>
 <input type="hidden" id="act" name="act" value="vercheck" />
@@ -230,7 +228,6 @@ if(!isset($_GET['name'])&&!isset($_GET['bid'])) {
 </form>
 
 <div class="copyright"><br />Powered by <a href="http://ja.gamemaker2k.org/" title="iDB-VerCheck <?php echo $site_version; ?>" onclick="window.open(this.href);return false;">iDB VerCheck</a> &copy; <a href="http://ja.gamemaker2k.org/support/category.php?act=view&amp;id=2" title="Game Maker 2k" onclick="window.open(this.href);return false;">Game Maker 2k</a> @ <?php echo $csryear." - ".$cryear; ?></div>
-<!-- Stephanie Braun o_O -->
 </body>
 </html>
 <?php exit(); } }
@@ -423,14 +420,14 @@ function html_tag_make($name="br",$emptytag=true,$attbvar=null,$attbval=null,$ex
 	return $mytag; }
 // Start a xml document
 function xml_tag_make($type,$attbs,$retval=false) {
-	$renee1 = explode("&",$attbs);
-	$reneenum=count($renee1);
-	$reneei=0; $attblist = null;
-	while ($reneei < $reneenum) {
-	$renee2 = explode("=",$renee1[$reneei]);
-	if($renee2[0]!=null||$renee2[1]!=null) {
-	$attblist = $attblist.' '.$renee2[0].'="'.$renee2[1].'"'; }
-	++$reneei; }
+	$melanie1 = explode("&",$attbs);
+	$melanienum=count($melanie1);
+	$melaniei=0; $attblist = null;
+	while ($melaniei < $melanienum) {
+	$melanie2 = explode("=",$melanie1[$melaniei]);
+	if($melanie2[0]!=null||$melanie2[1]!=null) {
+	$attblist = $attblist.' '.$melanie2[0].'="'.$melanie2[1].'"'; }
+	++$melaniei; }
 	if($retval!==false&&$retval!==true) { $retval=false; }
 	if($retval===false) {
 	echo '<?'.$type.$attblist.'?>'."\n"; }
@@ -470,11 +467,9 @@ if($_GET['redirect']!="on"&&$_GET['redirect']!="xml"&&$_GET['redirect']!="js") {
 <meta name="distribution" content="global">
 <link rel="icon" href="favicon.ico" type="image/icon">
 <link rel="shortcut icon" href="favicon.ico" type="image/icon">
-<!-- Katarzyna O_o -->
 </head>
 
 <body>
-<!-- Renee Sabonis ^_^ -->
 <?php }
 if(!isset($_GET['act'])) { $_GET['act'] = null; }
 if(!isset($_GET['redirect'])) { $_GET['redirect'] = null; }
@@ -611,7 +606,6 @@ if(!isset($_GET['name'])||!isset($_GET['reltype'])||!isset($_GET['ver'])||
 	echo "Sorry need more info to check version."; ?>
 
 <div class="copyright"><br />Powered by <a href="http://ja.gamemaker2k.org/" title="iDB-VerCheck <?php echo $site_version; ?>" onclick="window.open(this.href);return false;">iDB VerCheck</a> &copy; <a href="http://ja.gamemaker2k.org/support/category.php?act=view&amp;id=2" title="Game Maker 2k" onclick="window.open(this.href);return false;">Game Maker 2k</a> @ <?php echo $csryear." - ".$cryear; ?></div>
-<!-- Stephanie Braun o_O -->
 </body>
 </html>
 <?php exit(); } }
@@ -851,7 +845,6 @@ if($_GET['redirect']!="on"&&$_GET['redirect']!="xml"&&$_GET['redirect']!="js") {
 ?>
 
 <div class="copyright"><br />Powered by <a href="http://ja.gamemaker2k.org/" title="iDB-VerCheck <?php echo $site_version; ?>" onclick="window.open(this.href);return false;">iDB VerCheck</a> &copy; <a href="http://ja.gamemaker2k.org/support/category.php?act=view&amp;id=2" title="Game Maker 2k" onclick="window.open(this.href);return false;">Game Maker 2k</a> @ <?php echo $csryear." - ".$cryear; ?></div>
-<!-- Stephanie Braun o_O -->
 </body>
 </html>
 <?php } ?>

@@ -256,8 +256,6 @@ $utimestamp = $utimestamp + $tsa['minute'] * $utsminute;
 $utimestamp = $utimestamp + $minoffset * $utsminute;
 $timestamp = $timestamp + $utimestamp;
 return date($format,$timestamp); }
-	$Names['SB'] = "Stephanie Braun";
-define("_stephanie_", $Names['SB']);
 // Change Time Stamp to a readable time
 function TimeChange($format,$timestamp,$offset,$minoffset=null,$dst=null) {
 return GMTimeChange($format,$timestamp,$offset,$minoffset,$dst); }
@@ -304,9 +302,6 @@ if(!is_numeric($_GET['minoffset'])) { $_GET['minoffset'] = "00"; }
 if($_GET['minoffset']>=59) { $_GET['minoffset'] = "59"; }
 if($_GET['minoffset']<=0) { $_GET['minoffset'] = "00"; }
 $TimeOffSet = $_GET['offset'].":".$_GET['minoffset'];
-// Renee Marilyn Sabonis is the best ever. ^_^
-	$Names['RS'] = "Renee Sabonis";
-define("_renee_", $Names['RS']);
 if(isset($_GET['tar'])&&$_GET['act']=="dwntar") {
 if($_GET['output']=="none") {
 $FileType = "application/x-tar";
