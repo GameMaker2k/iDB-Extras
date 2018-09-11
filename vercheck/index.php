@@ -476,14 +476,14 @@ if(!isset($_GET['redirect'])) { $_GET['redirect'] = null; }
 if(isset($_GET['act'])&&$_GET['act']=="update") {
 if (function_exists("stream_context_create")) {
     if($get_content_by=="file_get_contents") {
-       $GetNewVersion = file_get_contents("http://sourceforge.jp/projects/idb/releases/",false,$context); }
+       $GetNewVersion = file_get_contents("https://github.com/GameMaker2k/iDB/releases/latest",false,$context); }
 } else {
     if($get_content_by=="file_get_contents") {
-       $GetNewVersion = file_get_contents("http://sourceforge.jp/projects/idb/releases/"); }
+       $GetNewVersion = file_get_contents("https://github.com/GameMaker2k/iDB/releases/latest"); }
 }
 if($get_content_by=="curl") {
    $ch = curl_init(); 
-   curl_setopt($ch, CURLOPT_URL, "http://sourceforge.jp/projects/idb/releases/");
+   curl_setopt($ch, CURLOPT_URL, "https://github.com/GameMaker2k/iDB/releases/latest");
    curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept-Language: *",
                                               "User-Agent: ".$site_useragent,
                                               "Accept: */*",
@@ -498,20 +498,28 @@ if($get_content_by=="curl") {
    curl_setopt($ch, CURLOPT_VERBOSE, 0);
    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
    curl_setopt($ch, CURLOPT_USERAGENT, $site_useragent);
+   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+   curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
    $GetNewVersion = curl_exec($ch);
    curl_close($ch); }
-preg_match_all("/([0-9])\.([0-9])\.([0-9]) ([A-Za-z]+) SVN ([0-9]+)/is", $GetNewVersion, $NewVersionPart);
-$NewSVNPart = $NewVersionPart[5][0];
+$verstart = preg_quote("<a href=\"/GameMaker2k/iDB/commit/", "/");
+$verend = preg_quote("\" class=\"muted-link\">", "/");
+preg_match_all("/".$verstart."([0-9a-zA-Z]+)".$verend."/is", $GetNewVersion, $NewVersionPart);
+$verstartnex = preg_quote("<a href=\"/GameMaker2k/iDB/releases/tag/", "/");
+$vermidnex = preg_quote("\">iDB ", "/");
+$verendnex = preg_quote("</a>", "/");
+preg_match_all("/".$verstartnex."([0-9]+)\.([0-9]+)\.([0-9]+)".$vermidnex."([0-9]+)\.([0-9]+)\.([0-9]+)".$verendnex."/is", $GetNewVersion, $NewFullVersionPart);
+$NewSVNPart = "https://raw.githubusercontent.com/GameMaker2k/iDB/".$NewVersionPart[1][0]."/inc/versioninfo.php";
 if (function_exists("stream_context_create")) {
     if($get_content_by=="file_get_contents") {
-       $GetSVNVersion = file_get_contents("http://sourceforge.net/p/intdb/svn/".$NewSVNPart."/tree/trunk/inc/versioninfo.php?format=raw",false,$context); }
+       $GetSVNVersion = file_get_contents($NewSVNPart,false,$context); }
 } else {
     if($get_content_by=="file_get_contents") {
-       $GetSVNVersion = file_get_contents("http://sourceforge.net/p/intdb/svn/".$NewSVNPart."/tree/trunk/inc/versioninfo.php?format=raw"); }
+       $GetSVNVersion = file_get_contents($NewSVNPart); }
 } 
 if($get_content_by=="curl") {
    $ch = curl_init(); 
-   curl_setopt($ch, CURLOPT_URL, "http://sourceforge.net/p/intdb/svn/".$NewSVNPart."/tree/trunk/inc/versioninfo.php?format=raw");
+   curl_setopt($ch, CURLOPT_URL, $NewSVNPart);
    curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept-Language: *",
                                               "User-Agent: ".$site_useragent,
                                               "Accept: */*",
@@ -521,14 +529,16 @@ if($get_content_by=="curl") {
                                               "Via: ".$_SERVER['REMOTE_ADDR'],
                                               "Forwarded: ".$_SERVER['REMOTE_ADDR'],
                                               "X-Forwarded-For: ".$_SERVER['REMOTE_ADDR'],
-                                             "Client-IP: ".$_SERVER['REMOTE_ADDR']));
+                                              "Client-IP: ".$_SERVER['REMOTE_ADDR']));
    curl_setopt($ch, CURLOPT_HEADER, 0);
    curl_setopt($ch, CURLOPT_VERBOSE, 0);
    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
    curl_setopt($ch, CURLOPT_USERAGENT, $site_useragent);
-   $GetNewVersion = curl_exec($ch);
+   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+   curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+   $GetSVNVersion = curl_exec($ch);
    curl_close($ch); }
-$newver['subver'] = $NewSVNPart;
+$newver['subver'] = $NewFullVersionPart[1][0].".".$NewFullVersionPart[2][0].".".$NewFullVersionPart[3][0];
 $prepreg1 = preg_quote("\$VER1[0] = ","/"); 
 $prepreg2 = preg_quote(";","/");
 preg_match_all("/".$prepreg1."(.*)".$prepreg2."{1}/isU", $GetSVNVersion, $GetVer0);
