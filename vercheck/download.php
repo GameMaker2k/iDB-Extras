@@ -37,6 +37,7 @@ header("Date: ".gmdate("D, d M Y H:i:s")." GMT");
 header("Last-Modified: ".gmdate("D, d M Y H:i:s")." GMT");
 header("Expires: ".gmdate("D, d M Y H:i:s")." GMT");
 output_reset_rewrite_vars();
+header("Location: https://github.com/GameMaker2k/iDB/releases/latest");
 $_GET['file'] = null;
 if($_GET['file']==null) {
 $mirrors['mirror'] = array("downloads.sourceforge.net","idb.gamemaker2k.org","of.openfoundry.org"); 
@@ -73,7 +74,7 @@ $l = 0; $nums = count($files); ?>
 <ul><li><a href="<?php echo $mirrors['links'][$i]; ?>"><?php echo $mirrors['name'][$i]; ?></a><ul>
 <?php while($l < $nums) { ?>
 	<li><a href="<?php echo $mirrors['url'][$i]; ?><?php echo $files[$l]; ?>"><?php echo $files[$l]; ?></a></li>
-<?php ++$l; } 
+<?php ++$l; } ?>
 </ul></li></ul>
 <?php ++$i; } ?>
 <div class="copyright">Powered by <a href="http://ja.gamemaker2k.org/" title="iDB Al 0.4.7 SVN 753" onclick="window.open(this.href);return false;">iDB VerCheck</a> &copy; <a href="http://ja.gamemaker2k.org/support/category.php?act=view&amp;id=2" title="Game Maker 2k" onclick="window.open(this.href);return false;">Game Maker 2k</a> @ 2004 - 2011</div>

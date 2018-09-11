@@ -44,7 +44,7 @@ $site_url = "http://localhost/vercheck/";
 $agent_site_url = $site_url."?act=vercheck";
 $site_name = "iDB Version checker";
 $appname = "iDB VerCheck";
-$download_url = $site_url."download.php";
+$download_url = "https://github.com/GameMaker2k/iDB/releases/latest";
 $site_version = "3.1.2";
 $ver_exp = explode(".",$site_version);
 if(!isset($ver_exp[3])) { $ver_exp[3] = null; }
