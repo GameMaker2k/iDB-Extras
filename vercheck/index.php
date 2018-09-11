@@ -538,7 +538,11 @@ if($get_content_by=="curl") {
    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
    $GetSVNVersion = curl_exec($ch);
    curl_close($ch); }
-$newver['subver'] = $NewFullVersionPart[1][0].".".$NewFullVersionPart[2][0].".".$NewFullVersionPart[3][0];
+$prepreg1 = preg_quote("\$SubVerN = ","/"); 
+$prepreg2 = preg_quote(";","/");
+preg_match_all("/".$prepreg1."(.*)".$prepreg2."{1}/isU", $GetSVNVersion, $GetVerSubType);
+$newver['subver'] = $GetVerSubType[1][0];
+//$newver['subver'] = $NewFullVersionPart[1][0].".".$NewFullVersionPart[2][0].".".$NewFullVersionPart[3][0];
 $prepreg1 = preg_quote("\$VER1[0] = ","/"); 
 $prepreg2 = preg_quote(";","/");
 preg_match_all("/".$prepreg1."(.*)".$prepreg2."{1}/isU", $GetSVNVersion, $GetVer0);
