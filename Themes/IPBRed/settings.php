@@ -1,7 +1,7 @@
 <?php
 /*
     $ThemeInfo - Name: IPB Alt Theme - Author: eternalSHADOW.com $
-	$FileInfo: settings.php - Last Update: 07/30/2011 SVN 729 - Author: cooldude2k $
+	$FileInfo: settings.php - Last Update: 08/02/2019 SVN 905 - Author: cooldude2k $
 */
 $ThemeSet = array();
 $ThemeSet['ThemeName'] = "IPB Red Theme";
