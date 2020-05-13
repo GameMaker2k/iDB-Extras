@@ -51,6 +51,7 @@ if(!isset($ver_exp[3])) { $ver_exp[3] = null; }
 $appver = array($ver_exp[0],$ver_exp[1],$ver_exp[2],$ver_exp[3]);//Version of program
 $csryear = "2004"; $cryear = date("Y"); if($cryear<=2004) { $cryear = "2005"; }
 $site_useragent = "Mozilla/5.0 (compatible; iDB-VerCheck/".$site_version."; +".$agent_site_url.")";
+$URLsTest = parse_url($Settings['idburl']); 
 // Programs to check for add to array.
 // $iDBArray = array("IntDB", "iDB");//IntDB
 $iDBArray = array("iDB");
@@ -73,6 +74,8 @@ $opts = array(
                 "Forwarded: ".$_SERVER['REMOTE_ADDR']."\r\n".
                 "X-Real-IP: ".$_SERVER['REMOTE_ADDR']."\r\n".
                 "X-Forwarded-For: ".$_SERVER['REMOTE_ADDR']."\r\n".
+                "X-Forwarded-Host: ".$URLsTest['host']."\r\n".
+                "X-Forwarded-Proto: ".$URLsTest['scheme']."\r\n".
                 "Client-IP: ".$_SERVER['REMOTE_ADDR']."\r\n"
   )
 );
