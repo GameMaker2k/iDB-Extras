@@ -11,20 +11,21 @@
     Copyright 2004-2019 iDB Support - https://idb.osdn.jp/support/category.php?act=view&id=1
     Copyright 2004-2019 Game Maker 2k - https://idb.osdn.jp/support/category.php?act=view&id=2
     $ThemeInfo - Name: iDB Gray - Author: cooldude2k $
-    $FileInfo: settings.php - Last Update: 08/02/2019 SVN 905 - Author: cooldude2k $
+    $FileInfo: settings.php - Last Update: 11/26/2020 SVN 921 - Author: cooldude2k $
 */
 $ThemeSet = array();
 $ThemeSet['ThemeName'] = "iDB Gray Theme";
 $ThemeSet['ThemeMaker'] = "Kazuki";
-$ThemeSet['ThemeVersion'] = "0.4.7";
+$ThemeSet['ThemeVersion'] = "0.4.8";
 $ThemeSet['ThemeVersionType'] = "Alpha";
-$ThemeSet['ThemeSubVersion'] = "SVN 729";
+$ThemeSet['ThemeSubVersion'] = "SVN 788";
 $ThemeSet['MakerURL'] = "https://idb.osdn.jp/";
 $ThemeSet['CopyRight'] = "%{ThemeName}T was made by <a href=\"%{MakerURL}T\" title=\"%{ThemeMaker}T\">%{ThemeMaker}T</a>";
 $ThemeSet['WrapperString'] = "<% HTMLSTART %>\n<% HTTPEQUIV %>\n<% METATAGS %>\n<% JAVASCRIPT %>\n<% LINKTAGS %>\n<% CSSTHEME %>\n<% FAVICON %>\n<% EXTRALINKS %>\n<% TITLETAG %>\n<% BODYTAG %>\n<% NAVBAR %>\n<% CONTENT %>\n<% COPYRIGHT %>\n<% HTMLEND %>";
 $ThemeSet['CSS'] = "themes/Gray/css.css";
 $ThemeSet['CSSType'] = "include";
 $ThemeSet['FavIcon'] = "themes/Gray/favicon.ico";
+$ThemeSet['OpenGraph'] = "themes/Gray/opengraph.png";
 $ThemeSet['TableStyle'] = "table";
 $ThemeSet['MiniPageAltStyle'] = "off";
 $ThemeSet['PreLogo'] = "<div style=\"text-align: center;\">";

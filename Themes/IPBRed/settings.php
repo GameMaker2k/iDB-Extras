@@ -1,7 +1,7 @@
 <?php
 /*
     $ThemeInfo - Name: IPB Alt Theme - Author: eternalSHADOW.com $
-	$FileInfo: settings.php - Last Update: 08/02/2019 SVN 905 - Author: cooldude2k $
+	$FileInfo: settings.php - Last Update: 11/26/2020 SVN 921 - Author: cooldude2k $
 */
 $ThemeSet = array();
 $ThemeSet['ThemeName'] = "IPB Red Theme";
@@ -15,6 +15,7 @@ $ThemeSet['WrapperString'] = "<% HTMLSTART %>\n<% HTTPEQUIV %>\n<% METATAGS %>\n
 $ThemeSet['CSS'] = "themes/IPBRed/css.css";
 $ThemeSet['CSSType'] = "include";
 $ThemeSet['FavIcon'] = "themes/IPBRed/favicon.ico";
+$ThemeSet['OpenGraph'] = "themes/IPBRed/opengraph.png";
 $ThemeSet['TableStyle'] = "div";
 $ThemeSet['MiniPageAltStyle'] = "on";
 $ThemeSet['PreLogo'] = null;

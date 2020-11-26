@@ -11,7 +11,7 @@
     Copyright 2004-2008 Jcink - https://launchpad.net/tfbb
     Copyright 2004-2008 Jcink - http://jcink.com/
     $ThemeInfo - Name: TFBB Theme - Author: jcink $
-    $FileInfo: settings.php - Last Update: 08/02/2019 SVN 905 - Author: jcink $
+    $FileInfo: settings.php - Last Update: 11/26/2020 SVN 921 - Author: jcink $
 */
 $ThemeSet = array();
 $ThemeSet['ThemeName'] = "TFBB Theme";
@@ -25,6 +25,7 @@ $ThemeSet['WrapperString'] = "<% HTMLSTART %>\n<% HTTPEQUIV %>\n<% METATAGS %>\n
 $ThemeSet['CSS'] = "themes/TFBB/css.css";
 $ThemeSet['CSSType'] = "include";
 $ThemeSet['FavIcon'] = "themes/TFBB/favicon.ico";
+$ThemeSet['OpenGraph'] = "themes/TFBB/opengraph.png";
 $ThemeSet['TableStyle'] = "div";
 $ThemeSet['MiniPageAltStyle'] = "off";
 $ThemeSet['PreLogo'] = null;

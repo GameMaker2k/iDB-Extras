@@ -16,9 +16,9 @@
 $ThemeInfo = array();
 $ThemeInfo['ThemeName'] = "iDB Gray Theme";
 $ThemeInfo['ThemeMaker'] = "Kazuki";
-$ThemeInfo['ThemeVersion'] = "0.4.7";
+$ThemeInfo['ThemeVersion'] = "0.4.8";
 $ThemeInfo['ThemeVersionType'] = "Alpha";
-$ThemeInfo['ThemeSubVersion'] = "SVN 729";
+$ThemeInfo['ThemeSubVersion'] = "SVN 788";
 $ThemeInfo['MakerURL'] = "https://idb.osdn.jp/";
 $ThemeInfo['CopyRight'] = "%{ThemeName}T was made by <a href=\"%{MakerURL}T\" title=\"%{ThemeMaker}T\">%{ThemeMaker}T</a>";
 ?>
