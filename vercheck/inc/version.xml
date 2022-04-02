@@ -20,11 +20,11 @@
 <relname>iDB</relname>
 <reltype>Al</reltype>
 <reltypename>Alpha</reltypename>
-<relnum>0.5.2</relnum>
+<relnum>0.5.3</relnum>
 <subtype>SVN</subtype>
-<relsvnum>909</relsvnum>
-<fullrel>iDB Al 0.5.2</fullrel>
-<fullname>iDB Al 0.5.2 SVN 909</fullname>
+<relsvnum>938</relsvnum>
+<fullrel>iDB Al 0.5.3</fullrel>
+<fullname>iDB Al 0.5.3 SVN 938</fullname>
 </version>
 
 </versioninfo>
