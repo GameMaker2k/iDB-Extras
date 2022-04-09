@@ -8,10 +8,10 @@
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     Revised BSD License for more details.
 
-    Copyright 2004-2008 Jcink - https://launchpad.net/tfbb
-    Copyright 2004-2008 Jcink - http://jcink.com/
+    Copyright 2004-2022 Jcink - https://launchpad.net/tfbb
+    Copyright 2004-2022 Jcink - http://jcink.com/
     $ThemeInfo - Name: TFBB Theme - Author: jcink $
-    $FileInfo: settings.php - Last Update: 11/26/2020 SVN 921 - Author: jcink $
+    $FileInfo: settings.php - Last Update: 4/9/2022 SVN 959 - Author: jcink $
 */
 $ThemeSet = array();
 $ThemeSet['ThemeName'] = "TFBB Theme";
