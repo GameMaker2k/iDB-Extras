@@ -11,19 +11,19 @@
     Copyright 2004-2022 Jcink - https://launchpad.net/tfbb
     Copyright 2004-2022 Jcink - http://jcink.com/
     $ThemeInfo - Name: TFBB Theme - Author: jcink $
-    $FileInfo: settings.php - Last Update: 4/9/2022 SVN 959 - Author: jcink $
+    $FileInfo: settings.php - Last Update: 4/10/2022 SVN 961 - Author: jcink $
 */
 $ThemeSet = array();
 $ThemeSet['ThemeName'] = "TFBB Theme";
 $ThemeSet['ThemeMaker'] = "Jcink";
 $ThemeSet['ThemeVersion'] = "0.4.7";
 $ThemeSet['ThemeVersionType'] = "Alpha";
-$ThemeSet['ThemeSubVersion'] = "SVN 729";
+$ThemeSet['ThemeSubVersion'] = "SVN 961";
 $ThemeSet['MakerURL'] = "http://Jcink.com/";
 $ThemeSet['CopyRight'] = "%{ThemeName}T was made by <a href=\"%{MakerURL}T\" title=\"%{ThemeMaker}T\">%{ThemeMaker}T</a>";
 $ThemeSet['WrapperString'] = "<% HTMLSTART %>\n<% HTTPEQUIV %>\n<% METATAGS %>\n<% JAVASCRIPT %>\n<% LINKTAGS %>\n<% CSSTHEME %>\n<% FAVICON %>\n<% EXTRALINKS %>\n<% TITLETAG %>\n<% BODYTAG %>\n<% NAVBAR %>\n<% CONTENT %>\n<% COPYRIGHT %>\n<% HTMLEND %>";
 $ThemeSet['CSS'] = "themes/TFBB/css.css";
-$ThemeSet['CSSType'] = "include";
+$ThemeSet['CSSType'] = "link";
 $ThemeSet['FavIcon'] = "themes/TFBB/favicon.ico";
 $ThemeSet['OpenGraph'] = "themes/TFBB/opengraph.png";
 $ThemeSet['TableStyle'] = "div";

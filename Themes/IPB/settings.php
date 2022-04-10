@@ -1,19 +1,19 @@
 <?php
 /*
     $ThemeInfo - Name: IPB Theme - Author: Matt Mecham $
-	$FileInfo: settings.php - Last Update: 4/9/2022 SVN 959 - Author: cooldude2k $
+	$FileInfo: settings.php - Last Update: 4/10/2022 SVN 961 - Author: cooldude2k $
 */
 $ThemeSet = array();
 $ThemeSet['ThemeName'] = "IPB Theme";
 $ThemeSet['ThemeMaker'] = "Matt Mecham";
 $ThemeSet['ThemeVersion'] = "0.4.7";
 $ThemeSet['ThemeVersionType'] = "Alpha";
-$ThemeSet['ThemeSubVersion'] = "SVN 729";
+$ThemeSet['ThemeSubVersion'] = "SVN 961";
 $ThemeSet['MakerURL'] = "http://invisionpower.com/";
 $ThemeSet['CopyRight'] = "%{ThemeName}T was made by <a href=\"%{MakerURL}T\" title=\"%{ThemeMaker}T\">%{ThemeMaker}T</a>";
 $ThemeSet['WrapperString'] = "<% HTMLSTART %>\n<% HTTPEQUIV %>\n<% METATAGS %>\n<% JAVASCRIPT %>\n<% LINKTAGS %>\n<% CSSTHEME %>\n<% FAVICON %>\n<% EXTRALINKS %>\n<% TITLETAG %>\n<% BODYTAG %>\n<% NAVBAR %>\n<% CONTENT %>\n<% COPYRIGHT %>\n<% HTMLEND %>";
 $ThemeSet['CSS'] = "themes/IPB/css.css";
-$ThemeSet['CSSType'] = "include";
+$ThemeSet['CSSType'] = "link";
 $ThemeSet['FavIcon'] = "themes/IPB/favicon.ico";
 $ThemeSet['OpenGraph'] = "themes/IPB/opengraph.png";
 $ThemeSet['TableStyle'] = "div";
