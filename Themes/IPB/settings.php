@@ -1,7 +1,7 @@
 <?php
 /*
     $ThemeInfo - Name: IPB Theme - Author: Matt Mecham $
-	$FileInfo: settings.php - Last Update: 4/10/2022 SVN 961 - Author: cooldude2k $
+	$FileInfo: settings.php - Last Update: 6/16/2023 SVN 973 - Author: cooldude2k $
 */
 $ThemeSet = array();
 $ThemeSet['ThemeName'] = "IPB Theme";
