@@ -11,7 +11,7 @@
     Copyright 2004-2023 Jcink - https://launchpad.net/tfbb
     Copyright 2004-2023 Jcink - http://jcink.com/
     $ThemeInfo - Name: TFBB Theme - Author: jcink $
-    $FileInfo: settings.php - Last Update: 6/16/2023 SVN 973 - Author: jcink $
+    $FileInfo: settings.php - Last Update: 6/22/2023 SVN 984 - Author: jcink $
 */
 $ThemeSet = array();
 $ThemeSet['ThemeName'] = "Jcink Classic Skin";
@@ -62,9 +62,9 @@ $ThemeSet['QuoteReply'] = "( Quote )";
 $ThemeSet['Report'] = "( Report )";
 $ThemeSet['EditReply'] = "( Edit )";
 $ThemeSet['DeleteReply'] = "( Delete )";
-$ThemeSet['LineDivider'] = "&nbsp;|&nbsp;";
-$ThemeSet['ButtonDivider'] = "&nbsp;|&nbsp;";
-$ThemeSet['LineDividerTopic'] = "&nbsp;|&nbsp;";
+$ThemeSet['LineDivider'] = "&#160;|&#160;";
+$ThemeSet['ButtonDivider'] = "&#160;|&#160;";
+$ThemeSet['LineDividerTopic'] = "&#160;|&#160;";
 $ThemeSet['TitleDivider'] = "-&gt;";
 $ThemeSet['ForumStyle'] = 1;
 $ThemeSet['ForumIcon'] = "<div style=\"text-align: center;\"><img src=\"themes/Jcink/forum.gif\" alt=\"Forum\" title=\"Forum\" /></div>";
@@ -72,7 +72,7 @@ $ThemeSet['SubForumIcon'] = "<div style=\"text-align: center;\"><img src=\"theme
 $ThemeSet['RedirectIcon'] = "<div style=\"text-align: center;\"><img src=\"themes/Jcink/forum.gif\" alt=\"Redirect\" title=\"Redirect\" /></div>";
 $ThemeSet['TitleIcon'] = "<img src=\"themes/Jcink/nav.gif\" alt=\"-&gt;\" title=\"-&gt;\" /> ";
 $ThemeSet['NavLinkIcon'] = "&gt;&gt; ";
-$ThemeSet['NavLinkDivider'] = "&nbsp;-&gt;&nbsp;";
+$ThemeSet['NavLinkDivider'] = "&#160;-&gt;&#160;";
 $ThemeSet['BoardStatsIcon'] = "<img src=\"themes/Jcink/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
 $ThemeSet['MemberStatsIcon'] = "<img src=\"themes/Jcink/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
 $ThemeSet['BirthdayStatsIcon'] = "<img src=\"themes/Jcink/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";

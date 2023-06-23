@@ -11,7 +11,7 @@
     Copyright 2004-2023 Jcink - https://launchpad.net/tfbb
     Copyright 2004-2023 Jcink - http://jcink.com/
     $ThemeInfo - Name: TFBB Theme - Author: jcink $
-    $FileInfo: info.php - Last Update: 6/16/2023 SVN 973 - Author: jcink $
+    $FileInfo: info.php - Last Update: 6/22/2023 SVN 984 - Author: jcink $
 */
 $ThemeInfo = array();
 $ThemeInfo['ThemeName'] = "Jcink Classic Skin";

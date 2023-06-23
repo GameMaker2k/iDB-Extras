@@ -1,7 +1,7 @@
 <?php
 /*
     $ThemeInfo - Name: IPB Theme - Author: Matt Mecham $
-	$FileInfo: settings.php - Last Update: 6/16/2023 SVN 973 - Author: cooldude2k $
+	$FileInfo: settings.php - Last Update: 6/22/2023 SVN 984 - Author: cooldude2k $
 */
 $ThemeSet = array();
 $ThemeSet['ThemeName'] = "IPB Theme";
@@ -52,9 +52,9 @@ $ThemeSet['QuoteReply'] = "<img src=\"themes/IPB/quote.gif\" alt=\"Quote Reply\"
 $ThemeSet['Report'] = "<img src=\"themes/IPB/report.gif\" alt=\"Report Reply\" title=\"Report Reply\" />";
 $ThemeSet['EditReply'] = "<img src=\"themes/IPB/edit.gif\" alt=\"Edit Reply\" title=\"Edit Reply\" />";
 $ThemeSet['DeleteReply'] = "<img src=\"themes/IPB/delete.gif\" alt=\"Delete Reply\" title=\"Delete Reply\" />";
-$ThemeSet['LineDivider'] = "&nbsp;|&nbsp;";
-$ThemeSet['ButtonDivider'] = "&nbsp;";
-$ThemeSet['LineDividerTopic'] = "&nbsp;";
+$ThemeSet['LineDivider'] = "&#160;|&#160;";
+$ThemeSet['ButtonDivider'] = "&#160;";
+$ThemeSet['LineDividerTopic'] = "&#160;";
 $ThemeSet['TitleDivider'] = "-&gt;";
 $ThemeSet['ForumStyle'] = 2;
 $ThemeSet['ForumIcon'] = "<div style=\"text-align: center;\"><img src=\"themes/IPB/forum.gif\" alt=\"Forum\" title=\"Forum\" /></div>";
@@ -62,7 +62,7 @@ $ThemeSet['SubForumIcon'] = "<div style=\"text-align: center;\"><img src=\"theme
 $ThemeSet['RedirectIcon'] = "<div style=\"text-align: center;\"><img src=\"themes/IPB/redirect.gif\" alt=\"Redirect Forum\" title=\"Redirect Forum\" /></div>";
 $ThemeSet['TitleIcon'] = "<img src=\"themes/IPB/nav.gif\" alt=\"-&gt;\" title=\"-&gt;\" /> ";
 $ThemeSet['NavLinkIcon'] = "<img src=\"themes/IPB/navbar.gif\" alt=\"-&gt;\" title=\"-&gt;\" /> ";
-$ThemeSet['NavLinkDivider'] = "&nbsp;-&gt;&nbsp;";
+$ThemeSet['NavLinkDivider'] = "&#160;-&gt;&#160;";
 $ThemeSet['BoardStatsIcon'] = "<img src=\"themes/IPB/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
 $ThemeSet['MemberStatsIcon'] = "<img src=\"themes/IPB/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
 $ThemeSet['BirthdayStatsIcon'] = "<img src=\"themes/IPB/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";

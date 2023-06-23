@@ -11,21 +11,21 @@
     Copyright 2009-2014 iDB Support - https://idb.osdn.jp/support/category.php?act=view&id=1
     Copyright 2009-2014 Game Maker 2k - https://idb.osdn.jp/support/category.php?act=view&id=2
 
-    $FileInfo: index.php - Last Update: 07/18/2014 Ver 3.1.2 - Author: cooldude2k $
+    $FileInfo: index.php - Last Update: 07/18/2014 Ver 3.1.5 - Author: cooldude2k $
 */
 /* Change to your url. */
-@ini_set("html_errors", false);
-@ini_set("track_errors", false);
-@ini_set("display_errors", false);
-@ini_set("report_memleaks", false);
-@ini_set("display_startup_errors", false);
+@ini_set("html_errors", true);
+@ini_set("track_errors", true);
+@ini_set("display_errors", true);
+@ini_set("report_memleaks", true);
+@ini_set("display_startup_errors", true);
 //@ini_set("error_log","logs/error.log"); 
 //@ini_set("log_errors","On"); 
 @ini_set("docref_ext", "");
 @ini_set("docref_root", "http://php.net/");
 @ini_set("date.timezone","UTC"); 
 @ini_set("default_mimetype","text/html");
-@error_reporting(E_ALL ^ E_NOTICE);
+@error_reporting(E_ALL);
 @set_time_limit(30); @ignore_user_abort(true);
 if(function_exists("date_default_timezone_set")) { 
 	@date_default_timezone_set("UTC"); }
@@ -45,7 +45,7 @@ $agent_site_url = $site_url."?act=vercheck";
 $site_name = "iDB Version checker";
 $appname = "iDB VerCheck";
 $download_url = "https://github.com/GameMaker2k/iDB/releases/latest";
-$site_version = "3.1.2";
+$site_version = "3.1.5";
 $ver_exp = explode(".",$site_version);
 if(!isset($ver_exp[3])) { $ver_exp[3] = null; }
 $appver = array($ver_exp[0],$ver_exp[1],$ver_exp[2],$ver_exp[3]);//Version of program
@@ -115,7 +115,7 @@ if(!isset($_GET['redirect'])) { $_GET['redirect'] = "off"; }
 
   function robots_allowed($url, $useragent=false)
   {
-	global $context;
+	global $robotstxt, $context, $get_content_by;
     # parse url to retrieve host and path
     $parsed = parse_url($url);
 
@@ -126,10 +126,10 @@ if(!isset($_GET['redirect'])) { $_GET['redirect'] = "off"; }
     # location of robots.txt file
     if (function_exists("stream_context_create")) {
         if($get_content_by=="file_get_contents") {
-           $robotstxt = file_get_contents("http://{$parsed['host']}/robots.txt",false,$context); }
+           $robotstxt = @file_get_contents("http://{$parsed['host']}/robots.txt",false,$context); }
     } else {
         if($get_content_by=="file_get_contents") {
-           $robotstxt = file_get_contents("http://{$parsed['host']}/robots.txt"); }
+           $robotstxt = @file_get_contents("http://{$parsed['host']}/robots.txt"); }
     }
     if($get_content_by=="curl") {
        $ch = curl_init(); 
@@ -148,12 +148,13 @@ if(!isset($_GET['redirect'])) { $_GET['redirect'] = "off"; }
        curl_setopt($ch, CURLOPT_VERBOSE, 0);
        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
        curl_setopt($ch, CURLOPT_USERAGENT, $site_useragent);
-       $robotstxt = curl_exec($ch);
+       $robotstxt = @curl_exec($ch);
        curl_close($ch); }
-    if(!$robotstxt) { return true; }
+    if(!isset($robotstxt)) { return true; }
 
     $rules = array();
     $ruleapplies = false;
+    if(isset($robotstxt)&&$robotstxt!=false) {
     foreach($robotstxt as $line) {
       # skip blank lines
       if(!$line = trim($line)) continue;
@@ -173,7 +174,7 @@ if(!isset($_GET['redirect'])) { $_GET['redirect'] = "off"; }
     foreach($rules as $rule) {
       # check if page is disallowed to us
       if(preg_match("/^$rule/", $parsed['path'])) return false;
-    }
+    } }
 
     # page is not disallowed
     return true;
