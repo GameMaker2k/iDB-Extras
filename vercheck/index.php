@@ -121,10 +121,12 @@ if(!isset($_GET['redirect'])) { $_GET['redirect'] = "off"; }
 
   function robots_allowed($url, $useragent=false)
   {
-	global $robotstxt, $context, $get_content_by;
+	global $robotstxt, $context, $get_content_by, $site_useragent, $agent_site_url;
     # parse url to retrieve host and path
     $parsed = parse_url($url);
-
+    if(!isset($parsed['port'])) {
+    if($parsed['scheme']=="http") { $parsed['port'] = "80"; }
+    if($parsed['scheme']=="https") { $parsed['port'] = "443"; } }
     $agents = array(preg_quote('*'));
     if($useragent) $agents[] = preg_quote($useragent);
     $agents = implode('|', $agents);
