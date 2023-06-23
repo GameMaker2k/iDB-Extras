@@ -14,18 +14,19 @@
     $FileInfo: index.php - Last Update: 07/18/2014 Ver 3.1.5 - Author: cooldude2k $
 */
 /* Change to your url. */
-@ini_set("html_errors", true);
-@ini_set("track_errors", true);
-@ini_set("display_errors", true);
-@ini_set("report_memleaks", true);
-@ini_set("display_startup_errors", true);
+@ini_set("html_errors", false);
+@ini_set("track_errors", false);
+@ini_set("display_errors", false);
+@ini_set("report_memleaks", false);
+@ini_set("display_startup_errors", false);
 //@ini_set("error_log","logs/error.log"); 
 //@ini_set("log_errors","On"); 
 @ini_set("docref_ext", "");
 @ini_set("docref_root", "http://php.net/");
 @ini_set("date.timezone","UTC"); 
 @ini_set("default_mimetype","text/html");
-@error_reporting(E_ALL);
+if(!defined("E_DEPRECATED")) { define("E_DEPRECATED", 0); }
+@error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
 @set_time_limit(30); @ignore_user_abort(true);
 if(function_exists("date_default_timezone_set")) { 
 	@date_default_timezone_set("UTC"); }
@@ -62,6 +63,11 @@ if(!isset($get_content_by) || ($get_content_by!="file_get_contents" && $get_cont
 if (function_exists("stream_context_create")) {
 if($get_content_by=="file_get_contents") {
 $opts = array(
+  'ssl' => array(
+    'cafile' => "./cacert.pem",
+    'verify_peer'=> true,
+    'verify_peer_name'=> true,
+    ),
   'http' => array(
     'method' => "GET",
     'header' => "Accept-Language: *\r\n".
@@ -126,14 +132,15 @@ if(!isset($_GET['redirect'])) { $_GET['redirect'] = "off"; }
     # location of robots.txt file
     if (function_exists("stream_context_create")) {
         if($get_content_by=="file_get_contents") {
-           $robotstxt = @file_get_contents("http://{$parsed['host']}/robots.txt",false,$context); }
+           $robotstxt = @file_get_contents("{$parsed['scheme']}://{$parsed['host']}:{$parsed['port']}/robots.txt",false,$context); }
     } else {
         if($get_content_by=="file_get_contents") {
-           $robotstxt = @file_get_contents("http://{$parsed['host']}/robots.txt"); }
+           $robotstxt = @file_get_contents("{$parsed['scheme']}://{$parsed['host']}:{$parsed['port']}/robots.txt"); }
     }
     if($get_content_by=="curl") {
        $ch = curl_init(); 
-       curl_setopt($ch, CURLOPT_URL, "http://{$parsed['host']}/robots.txt");
+       curl_setopt($ch, CURLOPT_URL, "{$parsed['scheme']}://{$parsed['host']}:{$parsed['port']}/robots.txt");
+       curl_setopt ($ch, CURLOPT_CAINFO, "./cacert.pem");
        curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept-Language: *",
                                                   "User-Agent: ".$site_useragent,
                                                   "Accept: */*",
@@ -261,6 +268,7 @@ if(isset($_GET['bid'])) {
     if($get_content_by=="curl") {
        $ch = curl_init(); 
        curl_setopt($ch, CURLOPT_URL, $_GET['bid']);
+       curl_setopt ($ch, CURLOPT_CAINFO, "./cacert.pem");
        curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept-Language: *",
     	                                          "User-Agent: ".$site_useragent,
     	                                          "Accept: */*",
@@ -288,6 +296,7 @@ if(isset($_GET['bid'])) {
     if($get_content_by=="curl") {
        $ch = curl_init(); 
        curl_setopt($ch, CURLOPT_URL, $_GET['bid']);
+       curl_setopt ($ch, CURLOPT_CAINFO, "./cacert.pem");
        curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept-Language: *",
     	                                          "User-Agent: ".$site_useragent,
     	                                          "Accept: */*",
@@ -489,6 +498,7 @@ if (function_exists("stream_context_create")) {
 if($get_content_by=="curl") {
    $ch = curl_init(); 
    curl_setopt($ch, CURLOPT_URL, "https://github.com/GameMaker2k/iDB/releases/latest");
+   curl_setopt ($ch, CURLOPT_CAINFO, "./cacert.pem");
    curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept-Language: *",
                                               "User-Agent: ".$site_useragent,
                                               "Accept: */*",
@@ -525,6 +535,7 @@ if (function_exists("stream_context_create")) {
 if($get_content_by=="curl") {
    $ch = curl_init(); 
    curl_setopt($ch, CURLOPT_URL, $NewSVNPart);
+   curl_setopt ($ch, CURLOPT_CAINFO, "./cacert.pem");
    curl_setopt($ch, CURLOPT_HTTPHEADER, array("Accept-Language: *",
                                               "User-Agent: ".$site_useragent,
                                               "Accept: */*",
