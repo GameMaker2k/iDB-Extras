@@ -1,7 +1,7 @@
 <?php
 /*
     $ThemeInfo - Name: IPB Alt Theme - Author: eternalSHADOW.com $
-	$FileInfo: settings.php - Last Update: 8/23/2024 SVN 1023 - Author: cooldude2k $
+    $FileInfo: settings.php - Last Update: 8/23/2024 SVN 1023 - Author: cooldude2k $
 */
 $ThemeSet = array();
 $ThemeSet['ThemeName'] = "IPB Alt Theme";
@@ -70,4 +70,3 @@ $ThemeSet['EventStatsIcon'] = "<img src=\"themes/IPBAlt/stats.gif\" alt=\"Board 
 $ThemeSet['OnlineStatsIcon'] = "<img src=\"themes/IPBAlt/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
 $ThemeSet['NoAvatar'] = "themes/IPBAlt/noavatar.png";
 $ThemeSet['NoAvatarSize'] = "100x100";
-?>

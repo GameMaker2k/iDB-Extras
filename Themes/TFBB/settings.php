@@ -80,4 +80,3 @@ $ThemeSet['EventStatsIcon'] = "<img src=\"themes/TFBB/stats.gif\" alt=\"Board St
 $ThemeSet['OnlineStatsIcon'] = "<img src=\"themes/TFBB/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
 $ThemeSet['NoAvatar'] = "themes/TFBB/noavatar.png";
 $ThemeSet['NoAvatarSize'] = "100x100";
-?>

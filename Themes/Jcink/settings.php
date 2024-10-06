@@ -80,4 +80,3 @@ $ThemeSet['EventStatsIcon'] = "<img src=\"themes/Jcink/stats.gif\" alt=\"Board S
 $ThemeSet['OnlineStatsIcon'] = "<img src=\"themes/Jcink/stats.gif\" alt=\"Board Stats\" title=\"Board Stats\" />";
 $ThemeSet['NoAvatar'] = "themes/Jcink/noavatar.png";
 $ThemeSet['NoAvatarSize'] = "100x100";
-?>

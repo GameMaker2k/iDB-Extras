@@ -25,25 +25,25 @@ $HTTPURL = "http://download.berlios.de/idb/";
 $TARGZFILE = "iDB.tar.gz";
 $TARFILE = "iDB.tar";
 require_once("./untar.php");
-$mydir = addslashes(str_replace("\\","/",dirname(__FILE__)."/"));
-$conn_id = ftp_connect($FTPURL,21,90);
+$mydir = addslashes(str_replace("\\", "/", dirname(__FILE__)."/"));
+$conn_id = ftp_connect($FTPURL, 21, 90);
 $login_result = ftp_login($conn_id, $FTPUSER, $FTPPASS);
-if((!$conn_id)||(!$login_result)) {
-$tarhandle = fopen("./".$TARGZFILE, "a+");
-fwrite($tarhandle,file_get_contents($HTTPURL.$TARGZFILE));
-fclose($tarhandle);
-chmod("./".$TARGZFILE,0777);
+if ((!$conn_id) || (!$login_result)) {
+    $tarhandle = fopen("./".$TARGZFILE, "a+");
+    fwrite($tarhandle, file_get_contents($HTTPURL.$TARGZFILE));
+    fclose($tarhandle);
+    chmod("./".$TARGZFILE, 0777);
 } else {
-ftp_pasv($conn_id, true);
-ftp_chdir($conn_id, $FTPPATH);
-ftp_get($conn_id, "./".$TARGZFILE, "./".$TARGZFILE, FTP_BINARY);
-ftp_close($conn_id); }
-gunzip("./".$TARGZFILE,"./".$TARFILE);
+    ftp_pasv($conn_id, true);
+    ftp_chdir($conn_id, $FTPPATH);
+    ftp_get($conn_id, "./".$TARGZFILE, "./".$TARGZFILE, FTP_BINARY);
+    ftp_close($conn_id);
+}
+gunzip("./".$TARGZFILE, "./".$TARFILE);
 unlink("./".$TARGZFILE);
 unlink("./LICENSE");
-untar("./".$TARFILE,"./");
+untar("./".$TARFILE, "./");
 unlink("./".$TARFILE);
 unlink("./untar.php");
 unlink("./webinstall.php");
 header("Location: ./install.php");
-?>

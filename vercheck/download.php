@@ -18,17 +18,22 @@
 @ini_set("display_errors", false);
 @ini_set("report_memleaks", false);
 @ini_set("display_startup_errors", false);
-//@ini_set("error_log","logs/error.log"); 
-//@ini_set("log_errors","On"); 
+//@ini_set("error_log","logs/error.log");
+//@ini_set("log_errors","On");
 @ini_set("docref_ext", "");
 @ini_set("docref_root", "http://php.net/");
-@ini_set("date.timezone","UTC"); 
-@ini_set("default_mimetype","text/html");
+@ini_set("date.timezone", "UTC");
+@ini_set("default_mimetype", "text/html");
 @error_reporting(E_ALL ^ E_NOTICE);
-@set_time_limit(30); @ignore_user_abort(true);
-if(function_exists("date_default_timezone_set")) { 
-	@date_default_timezone_set("UTC"); }
-function idb_output_handler($buffer) { return $buffer; }
+@set_time_limit(30);
+@ignore_user_abort(true);
+if (function_exists("date_default_timezone_set")) {
+    @date_default_timezone_set("UTC");
+}
+function idb_output_handler($buffer)
+{
+    return $buffer;
+}
 @ob_start("idb_output_handler");
 header("Cache-Control: private, no-cache, no-store, must-revalidate, pre-check=0, post-check=0, max-age=0");
 header("Pragma: private, no-cache, no-store, must-revalidate, pre-check=0, post-check=0, max-age=0");
@@ -39,14 +44,14 @@ header("Expires: ".gmdate("D, d M Y H:i:s")." GMT");
 output_reset_rewrite_vars();
 header("Location: https://github.com/GameMaker2k/iDB/releases/latest");
 $_GET['file'] = null;
-if($_GET['file']==null) {
-$mirrors['mirror'] = array("downloads.sourceforge.net","idb.gamemaker2k.org","of.openfoundry.org"); 
-$mirrors['url'] = array("http://downloads.sourceforge.net/intdb/","http://of.openfoundry.org/download_path/idb/0.4.6.696/");
-$mirrors['name'] = array("SourceForge","iDB Support FTP","OpenFoundry"); 
-$mirrors['links'] = array("http://sourceforge.net/projects/intdb","http://idb.gamemaker2k.org/","http://of.openfoundry.org/projects/1220");
-//$files = array("iDB.zip","iDB.tar.gz","iDB.tar.bz2","iDB.tar.lzma","iDB.tar.xz","iDB.7z","iDB.deb","iDB.rpm","iDB-Host.zip","iDB-Host.tar.gz","iDB-Host.lzma","iDB-Host.tar.xz","iDB-Host.tar.bz2","iDB-Host.7z","iDB-Host.deb","iDB-Host.rpm","iDBEH-Mod.zip","iDBEH-Mod.tar.gz","iDBEH-Mod.tar.bz2","iDBEH-Mod.tar.lzma","iDBEH-Mod.tar.xz","iDBEH-Mod.7z");
-$files = array("iDB.zip","iDB.tar.gz","iDB.tar.bz2","iDB.tar.xz","iDB.7z","iDB-Host.zip","iDB-Host.tar.gz","iDB-Host.tar.xz","iDB-Host.tar.bz2","iDB-Host.7z","iDBEH-Mod.zip","iDBEH-Mod.tar.gz","iDBEH-Mod.tar.bz2","iDBEH-Mod.tar.xz","iDBEH-Mod.7z","iDBEH-SubMod.zip","iDBEH-SubMod.tar.gz","iDBEH-SubMod.tar.bz2","iDBEH-SubMod.tar.xz","iDBEH-SubMod.7z","webinstaller.zip","webinstaller.tar.gz","webinstaller.tar.bz2","webinstaller.7z");
-?>
+if ($_GET['file'] == null) {
+    $mirrors['mirror'] = array("downloads.sourceforge.net","idb.gamemaker2k.org","of.openfoundry.org");
+    $mirrors['url'] = array("http://downloads.sourceforge.net/intdb/","http://of.openfoundry.org/download_path/idb/0.4.6.696/");
+    $mirrors['name'] = array("SourceForge","iDB Support FTP","OpenFoundry");
+    $mirrors['links'] = array("http://sourceforge.net/projects/intdb","http://idb.gamemaker2k.org/","http://of.openfoundry.org/projects/1220");
+    //$files = array("iDB.zip","iDB.tar.gz","iDB.tar.bz2","iDB.tar.lzma","iDB.tar.xz","iDB.7z","iDB.deb","iDB.rpm","iDB-Host.zip","iDB-Host.tar.gz","iDB-Host.lzma","iDB-Host.tar.xz","iDB-Host.tar.bz2","iDB-Host.7z","iDB-Host.deb","iDB-Host.rpm","iDBEH-Mod.zip","iDBEH-Mod.tar.gz","iDBEH-Mod.tar.bz2","iDBEH-Mod.tar.lzma","iDBEH-Mod.tar.xz","iDBEH-Mod.7z");
+    $files = array("iDB.zip","iDB.tar.gz","iDB.tar.bz2","iDB.tar.xz","iDB.7z","iDB-Host.zip","iDB-Host.tar.gz","iDB-Host.tar.xz","iDB-Host.tar.bz2","iDB-Host.7z","iDBEH-Mod.zip","iDBEH-Mod.tar.gz","iDBEH-Mod.tar.bz2","iDBEH-Mod.tar.xz","iDBEH-Mod.7z","iDBEH-SubMod.zip","iDBEH-SubMod.tar.gz","iDBEH-SubMod.tar.bz2","iDBEH-SubMod.tar.xz","iDBEH-SubMod.7z","webinstaller.zip","webinstaller.tar.gz","webinstaller.tar.bz2","webinstaller.7z");
+    ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
    "http://www.w3.org/TR/html4/strict.dtd">
 <html>
@@ -68,15 +73,19 @@ $files = array("iDB.zip","iDB.tar.gz","iDB.tar.bz2","iDB.tar.xz","iDB.7z","iDB-H
 </head>
 
 <body>
-<?php $i = 0; $num = count($mirrors['mirror']);
-while($i < $num) {
-$l = 0; $nums = count($files); ?>
+<?php $i = 0;
+    $num = count($mirrors['mirror']);
+    while ($i < $num) {
+        $l = 0;
+        $nums = count($files); ?>
 <ul><li><a href="<?php echo $mirrors['links'][$i]; ?>"><?php echo $mirrors['name'][$i]; ?></a><ul>
-<?php while($l < $nums) { ?>
+<?php while ($l < $nums) { ?>
 	<li><a href="<?php echo $mirrors['url'][$i]; ?><?php echo $files[$l]; ?>"><?php echo $files[$l]; ?></a></li>
-<?php ++$l; } ?>
+<?php ++$l;
+} ?>
 </ul></li></ul>
-<?php ++$i; } ?>
+<?php ++$i;
+    } ?>
 <div class="copyright">Powered by <a href="http://ja.gamemaker2k.org/" title="iDB Al 0.4.7 SVN 753" onclick="window.open(this.href);return false;">iDB VerCheck</a> &copy; <a href="http://ja.gamemaker2k.org/support/category.php?act=view&amp;id=2" title="Game Maker 2k" onclick="window.open(this.href);return false;">Game Maker 2k</a> @ 2004 - 2011</div>
 </body>
 </html>
