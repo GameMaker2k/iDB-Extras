@@ -1,8 +1,9 @@
-import os
-import gzip
-import bz2
 import base64
+import bz2
+import gzip
 import hashlib
+import os
+
 
 def file_list_dir(dirname):
     srcdir = []
@@ -17,13 +18,16 @@ def file_list_dir(dirname):
     fulllist = srcdir + srcfile
     return fulllist
 
+
 def gzip_file(infile, outfile, param=5):
     with open(infile, 'rb') as f_in, gzip.open(outfile, 'wb', compresslevel=param) as f_out:
         f_out.writelines(f_in)
 
+
 def bzip_file(infile, outfile):
     with open(infile, 'rb') as f_in, bz2.open(outfile, 'wb') as f_out:
         f_out.writelines(f_in)
+
 
 def make_ipack_1(packname, ziptype, delunzip, encodetype, decodetype):
     if packname is None or encodetype is None or decodetype is None:
