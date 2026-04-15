@@ -697,9 +697,10 @@ if (isset($_GET['act']) && $_GET['act'] == "update") {
         $GetNewVersion = curl_exec($ch);
         curl_close($ch);
     }
-    $verstart = preg_quote("<a href=\"/GameMaker2k/iDB/commit/", "/");
-    $verend = preg_quote("\" class=\"muted-link\">", "/");
+    $verstart = preg_quote("hovercard\" href=\"/GameMaker2k/iDB/commit/", "/");
+    $verend = preg_quote("\" data-view-component=\"true\" class=\"Link Link--muted\">", "/");
     preg_match_all("/".$verstart."([0-9a-zA-Z]+)".$verend."/is", $GetNewVersion, $NewVersionPart);
+    var_dump($NewVersionPart);
     $verstartnex = preg_quote("<a href=\"/GameMaker2k/iDB/releases/tag/", "/");
     $vermidnex = preg_quote("\">iDB ", "/");
     $verendnex = preg_quote("</a>", "/");
